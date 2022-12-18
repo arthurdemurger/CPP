@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 17:36:16 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/17 18:37:34 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/12/18 20:43:14 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 
 class PhoneBook
 {
-		public:
-
+public:
 	PhoneBook(void);
 	~PhoneBook(void);
 	void	addContact(void);
 	void	searchContact(void);
 
-		private:
+private:
 	void	resetContact(void);
 	void	incrementIndex(void);
 	bool	isPhoneNumber(std::string s);

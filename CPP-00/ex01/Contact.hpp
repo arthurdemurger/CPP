@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 17:36:07 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/17 18:41:25 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/12/18 20:43:03 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Contact
 {
-	public:
+public:
 	Contact(void);
 	~Contact(void);
 
@@ -34,8 +34,7 @@ class Contact
 	void		setNickName(std::string s);
 	void		setPhoneNumber(int nb);
 
-	private:
-
+private:
 	std::string	darkSecret;
 	std::string	firstName;
 	std::string	lastName;
