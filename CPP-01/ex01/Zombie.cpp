@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:06:57 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/19 16:32:55 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/12/19 22:45:57 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	Zombie::setName(std::string name)
 }
 
 /* Announce function */
-void	Zombie::announce(void)
+void	Zombie::announce(void) const
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

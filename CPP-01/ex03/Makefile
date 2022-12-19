@@ -6,11 +6,13 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 14:11:00 by ademurge          #+#    #+#              #
-#    Updated: 2022/12/19 16:41:14 by ademurge         ###   ########.fr        #
+#    Updated: 2022/12/19 22:51:17 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC			=	main.cpp
+SRC			=	main.cpp \
+				HumanA.cpp \
+				Weapon.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
@@ -20,7 +22,7 @@ RM			=	rm -f
 
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME 		=	brain
+NAME 		=	violence
 
 all:		$(NAME)
 
