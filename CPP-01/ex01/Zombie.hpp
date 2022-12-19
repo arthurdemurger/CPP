@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/18 21:03:53 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/19 13:22:20 by ademurge         ###   ########.fr       */
+/*   Created: 2022/12/19 14:06:55 by ademurge          #+#    #+#             */
+/*   Updated: 2022/12/19 14:10:45 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-void	randomChump(std::string name)
+class Zombie
 {
-	Zombie	random(name);
-	random.announce();
-}
+public:
+	Zombie(std::string name);
+	~Zombie();
+	void	announce(void);
+
+private:
+	std::string	_name;
+};

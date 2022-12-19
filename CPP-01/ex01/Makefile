@@ -6,14 +6,13 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 14:11:00 by ademurge          #+#    #+#              #
-#    Updated: 2022/12/19 13:22:41 by ademurge         ###   ########.fr        #
+#    Updated: 2022/12/19 14:06:13 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC			=	main.cpp \
 				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp
+				zombieHorde.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
