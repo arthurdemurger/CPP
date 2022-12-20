@@ -5,15 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/14 14:11:00 by ademurge          #+#    #+#              #
-#    Updated: 2022/12/20 11:03:06 by ademurge         ###   ########.fr        #
+#    Created: 2022/12/20 13:01:30 by ademurge          #+#    #+#              #
+#    Updated: 2022/12/20 14:05:26 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC			=	main.cpp \
-				HumanA.cpp \
-				HumanB.cpp \
-				Weapon.cpp
+				Harl.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
@@ -23,7 +21,7 @@ RM			=	rm -f
 
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME 		=	violence
+NAME 		=	harl
 
 all:		$(NAME)
 
