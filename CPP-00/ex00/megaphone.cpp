@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:55:04 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/15 13:50:39 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/02/15 09:55:30 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ int main (int ac, char **av)
 		if (av[i + 1])
 			std::cout << " ";
 	}
-	if (ac >= 1)
-		std::cout << std::endl;
+	std::cout << std::endl;
 }

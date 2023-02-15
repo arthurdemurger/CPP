@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 17:36:13 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/17 17:56:15 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/02/15 10:33:56 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ int main (void)
 		else if (input == "SEARCH")
 			phonebook.searchContact();
 	} while (input != "EXIT");
-
 	return (0);
 }

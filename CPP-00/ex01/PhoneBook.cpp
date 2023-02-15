@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 17:36:14 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/17 18:47:14 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/02/15 11:48:10 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	PhoneBook::resetContact(void)
 	this->_contacts[this->_index].setLastName("");
 	this->_contacts[this->_index].setNickName("");
 	this->_contacts[this->_index].setDarkSecret("");
-	this->_contacts[this->_index].setPhoneNumber(-1);
+	this->_contacts[this->_index].setPhoneNumber(0);
 }
 
 /* Add a contact to the phonebook */
@@ -77,13 +77,13 @@ void	PhoneBook::addContact(void)
 		getline(std::cin, input);
 		this->_contacts[this->_index].setDarkSecret(input);
 	}
-	while (this->_contacts[this->_index].getPhoneNumber() < 0)
+	while (this->_contacts[this->_index].getPhoneNumber() == 0)
 	{
 		std::cout << "Enter your phone number : ";
 		getline(std::cin, input);
 		if (isPhoneNumber(input))
 			this->_contacts[this->_index].setPhoneNumber(ft_stoi(input));
-		if (this->_contacts[this->_index].getPhoneNumber() < 0)
+		if (this->_contacts[this->_index].getPhoneNumber() == 0)
 			std::cout << "Wrong input." << std::endl;
 	}
 	incrementIndex();
@@ -177,15 +177,17 @@ bool	PhoneBook::isPhoneNumber(std::string s)
 
 	i = -1;
 	while (s[++i])
-		if (!isdigit(s[i]))
+	{
+		if (!std::isdigit(s[i]))
 			return (false);
+	}
 	return (true);
 }
 
 int	PhoneBook::ft_stoi(std::string s)
 {
-	int	sum;
-	int	i;
+	unsigned long long	sum;
+	int					i;
 
 	sum = 0;
 	i = -1;

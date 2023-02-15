@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 17:36:10 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/17 18:41:20 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/02/15 10:26:55 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Contact::Contact(void)
 {
 	//std::cout << "Constructor called" << std::endl;
-	this->phoneNumber = -1;
+	this->phoneNumber = 0;
 	return ;
 }
 
@@ -50,7 +50,7 @@ std::string	Contact::getNickName(void) const
 	return (this->nickName);
 }
 
-long	Contact::getPhoneNumber(void) const
+unsigned long long	Contact::getPhoneNumber(void) const
 {
 	return (this->phoneNumber);
 }
@@ -78,7 +78,7 @@ void	Contact::setNickName(std::string s)
 	this->nickName = s;
 }
 
-void	Contact::setPhoneNumber(int nb)
+void	Contact::setPhoneNumber(unsigned long long nb)
 {
 	this->phoneNumber = nb;
 }
