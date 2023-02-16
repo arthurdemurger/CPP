@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 13:01:27 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/20 15:09:10 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:24:17 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Harl::Harl(void)
 {
-	std::cout << "Harl has been created." << std::endl;
+	// std::cout << "Harl has been created." << std::endl;
 }
 
 Harl::~Harl(void)
 {
-	std::cout << "Harl has been destroyed." << std::endl;
+	// std::cout << "Harl has been destroyed." << std::endl;
 }
 
 void	Harl::debug(void)
