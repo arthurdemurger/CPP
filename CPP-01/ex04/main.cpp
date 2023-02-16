@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 11:11:07 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/20 12:58:11 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:16:17 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ int	replace(std::string filename, std::string s1, std::string s2)
 		getline(ifs, buf);
 		for (size_t i = 0; i < buf.length(); i++)
 		{
-			pos = buf.find(s1, i);
-			if (pos != std::string::npos)
+			if ((pos = buf.find(s1, i)) != std::string::npos)
 			{
 				buf.erase(pos, s1.length());
 				buf.insert(pos, s2);
