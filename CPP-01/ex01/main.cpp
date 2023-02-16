@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:06:59 by ademurge          #+#    #+#             */
-/*   Updated: 2022/12/19 16:39:48 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:45:13 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ Zombie	*zombieHorde(int N, std::string name);
 
 int main (void)
 {
-	Zombie *horde = zombieHorde(2, "Zombie");
+	int	numberOfZombie;
+	int	i;
 
-	horde[0].announce();
-	horde[1].announce();
-
+	i = -1;
+	numberOfZombie = 7;
+	Zombie *horde = zombieHorde(numberOfZombie, "Zombie");
+	while (++i < numberOfZombie)
+		horde[i].announce();
 	delete [] horde;
 	return (0);
 }
