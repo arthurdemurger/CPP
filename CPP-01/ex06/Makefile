@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 14:08:36 by ademurge          #+#    #+#              #
-#    Updated: 2022/12/20 14:10:14 by ademurge         ###   ########.fr        #
+#    Updated: 2023/02/16 13:52:59 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC			=	main.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 
-CC			=	g++
+CC			=	c++
 
 RM			=	rm -f
 
