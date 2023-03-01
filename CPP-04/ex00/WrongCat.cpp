@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:28 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/01 17:02:57 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:03:03 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 {
-	std::cout << "<Cat : '" << this->_type << "'> string constructor called." << std::endl;
+	std::cout << "<WrongCat : '" << this->_type << "'> string constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat &c)
+WrongCat::WrongCat(const WrongCat &c)
 {
-	std::cout << "<Cat : '" << this->_type << "'> copy constructor called" << std::endl;
+	std::cout << "<WrongCat : '" << this->_type << "'> copy constructor called" << std::endl;
 	*this = c;
 }
 
-Cat::~Cat(void)
+WrongCat::~WrongCat(void)
 {
-	std::cout << "<Cat : '" << this->_type << "'> destructor called." << std::endl;
+	std::cout << "<WrongCat : '" << this->_type << "'> destructor called." << std::endl;
 }
 
-Cat&	Cat::operator=(const Cat &rhs)
+WrongCat&	WrongCat::operator=(const WrongCat &rhs)
 {
 	this->_type = rhs._type;
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
-	std::cout << "<Cat : '" << this->_type << "'> : Miaou miaou" << std::endl;
+	std::cout << "<WrongCat : '" << this->_type << "'> : Miaou miaou" << std::endl;
 }
 
