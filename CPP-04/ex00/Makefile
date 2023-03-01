@@ -6,12 +6,14 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/01 13:47:09 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/01 16:32:37 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC			=	main.cpp \
-				Animal.cpp
+				Animal.cpp \
+				Cat.cpp \
+				Dog.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 

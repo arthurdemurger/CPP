@@ -6,16 +6,26 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/01 14:05:07 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/01 16:50:28 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-
+#include "Cat.hpp"
+#include "Dog.hpp"
 int main(void)
 {
-	Animal test("animal");
+	const Animal* meta = new Animal();
+	const Animal* scooby = new Dog();
+	const Animal* garfield = new Cat();
 
-	test.makeSound();
+	std::cout << scooby->getType() << " " << std::endl;
+	std::cout << garfield->getType() << " " << std::endl;
+	scooby->makeSound(); //will output the cat sound!
+	garfield->makeSound();
+	meta->makeSound();
+
+	delete meta;
+	delete garfield;
+	delete scooby;
 	return (0);
-}
+};
