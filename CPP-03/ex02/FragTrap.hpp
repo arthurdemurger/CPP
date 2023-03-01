@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/23 18:44:56 by ael-khni          #+#    #+#             */
-/*   Updated: 2023/03/01 13:14:53 by ademurge         ###   ########.fr       */
+/*   Created: 2023/03/01 12:40:49 by ademurge          #+#    #+#             */
+/*   Updated: 2023/03/01 13:11:16 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap ct1("Adrien");
-	ScavTrap ct2("Alex");
-	FragTrap ct3("Antoine");
+	public:
+		FragTrap(std::string name);
+		FragTrap(const FragTrap &f);
+		FragTrap &operator=(const FragTrap& rhs);
+		~FragTrap();
 
-	ct2.beRepaired(5);
-	ct1.attack("Antoine");
-	ct2.takeDamage(12);
-	ct2.guardGate();
-	ct3.highFiveGuys();
-}
+		void highFiveGuys(void);
+
+	private:
+		FragTrap();
+};
+
+#endif
