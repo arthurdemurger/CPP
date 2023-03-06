@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:08 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/01 16:55:28 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:38:08 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
-	std::cout << "<WrongAnimal : '" << this->_type << "'> string constructor called." << std::endl;
+	std::cout << "WrongAnimal " << this->_type << " string constructor called." << std::endl;
 }
 
 WrongAnimal::WrongAnimal(void)
@@ -24,18 +24,18 @@ WrongAnimal::WrongAnimal(void)
 
 WrongAnimal::WrongAnimal(const WrongAnimal &a)
 {
-	std::cout << "<WrongAnimal : '" << this->_type << "'> copy constructor called" << std::endl;
+	std::cout << "WrongAnimal " << this->_type << " copy constructor called" << std::endl;
 	*this = a;
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "<WrongAnimal : '" << this->_type << "'> destructor called." << std::endl;
+	std::cout << "WrongAnimal " << this->_type << " destructor called." << std::endl;
 }
 
 void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "<WrongAnimal : '" << this->_type << "'> : .........." << std::endl;
+	std::cout << "WrongAnimal " << this->_type << " : * WrongAnimal sound *" << std::endl;
 }
 
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal &rhs)
