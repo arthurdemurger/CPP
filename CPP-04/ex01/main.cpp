@@ -6,21 +6,20 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 12:05:43 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:15:18 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongCat.hpp"
 
 int main(void)
 {
 	const Animal* j = new Dog();
-    const Animal* i = new Cat();
+	const Animal* i = new Cat();
 
-    delete j;//should not create a leak
-    delete i;
+	delete j;//should not create a leak
+	delete i;
 
 	std::cout << std::endl << "****** Constructors ******" << std::endl;
 	Animal	*animalArray[4];

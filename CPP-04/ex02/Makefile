@@ -6,12 +6,12 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/06 11:51:25 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/06 12:14:38 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC			=	main.cpp \
-				Animal.cpp \
+				AAnimal.cpp \
 				Cat.cpp \
 				Dog.cpp \
 				WrongCat.cpp \

@@ -6,14 +6,14 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:32 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:57:58 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:14:52 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Dog::Dog(void) : AAnimal("Dog")
 {
 	this->_brain = new Brain();
 	std::cout << "Dog " << this->_type << " string constructor called." << std::endl;

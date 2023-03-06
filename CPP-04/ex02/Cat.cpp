@@ -6,13 +6,13 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:28 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:57:31 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:14:50 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Cat")
+Cat::Cat(void) : AAnimal("Cat")
 {
 	this->_brain = new Brain();
 	std::cout << "Cat " << this->_type << " string constructor called." << std::endl;

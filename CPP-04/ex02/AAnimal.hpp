@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:45:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:52:07 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:13:54 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 #include <iostream>
 #include "Brain.hpp"
 
-class Animal
+class AAnimal
 {
 	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &a);
-		Animal &operator=(const Animal &rhs);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(std::string type);
+		AAnimal(const AAnimal &a);
+		AAnimal &operator=(const AAnimal &rhs);
+		virtual ~AAnimal();
 
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
 	protected:
 		std::string	_type;
