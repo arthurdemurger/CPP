@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 12:39:40 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/07 11:57:01 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:45:16 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int main(void)
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 
-	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << "max between [" << a << "] and [" << b << "] : " << Fixed::max(a, b) << std::endl;
+	std::cout << "min between [" << a << "] and [" << b << "] : " << Fixed::min(a, b) << std::endl;
 
 	return (0);
 }
