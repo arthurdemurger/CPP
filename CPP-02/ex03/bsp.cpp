@@ -6,37 +6,34 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:04:33 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/07 13:10:06 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:29:57 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Fixed	ft_abs(Fixed nb)
+Fixed ft_abs(Fixed nb)
 {
 	if (nb < 0)
-		return (nb * -1);
+		return (nb * - 1);
 	return (nb);
-}
-
-Fixed zone(Point const a, Point const b, Point const c)
-{
-	return ((a.getX() * (b.getY() - c.getY())) + (b.getX() * (c.getY() - a.getY()))
-			+ (c.getX() * (a.getY() - b.getY())) / 2);
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed	totalZone, zone1, zone2, zone3;
+	Fixed zoneTotale, zone1, zone2, zone3;
 
-	totalZone = ft_abs(zone(a, b , c));
-	zone1 = ft_abs(zone(point, b, c));
-	std::cout << zone1 << std::endl;
+	// calcul de la zone totale du triangle
+	zoneTotale = ft_abs((b.getX() - a.getX()) * (c.getY() - a.getY()) - (c.getX() - a.getX() * (b.getY() - a.getY()))) / Fixed(2);
 
-	zone2 = ft_abs(zone(a, point, c));
-	zone3 = ft_abs(zone(a, b, point));
+	// calcul des zones des triangles formés par le point et chaque coin
+	zone1 = ft_abs((point.getX() - a.getX()) * (b.getY() - a.getY()) - (b.getX() - a.getX()) * (point.getY() - a.getY())) / Fixed(2);
+	zone2 = ft_abs((point.getX() - b.getX()) * (c.getY() - b.getY()) - (c.getX() - b.getX()) * (point.getY() - b.getY())) / Fixed(2);
+	zone3 = ft_abs((point.getX() - c.getX()) * (a.getY() - c.getY()) - (a.getX() - c.getX()) * (point.getY() - c.getY())) / Fixed(2);
 
-	if (zone1 + zone2 + zone3 == totalZone)
-		return (true);
-	return (false);
+	// si la somme des zones des triangles formés par le point et chaque coin est égale à la zone totale du triangle, le point est à l'intérieur du triangle
+	if ((zone1 + zone2 + zone3) == zoneTotale)
+		return true;
+	else
+		return false;
 }
