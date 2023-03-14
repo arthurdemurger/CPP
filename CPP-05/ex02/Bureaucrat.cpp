@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:44:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 13:23:49 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:00:58 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ Bureaucrat::~Bureaucrat(void)
 
 }
 
-void	Bureaucrat::signForm(Form &f)
+void	Bureaucrat::signForm(AForm &f)
 {
 	if (f.getIsSigned() == false)
 		try
@@ -69,7 +69,7 @@ void	Bureaucrat::signForm(Form &f)
 			f.beSigned(*this);
 			std::cout << this->_name << " signed " << f.getName() << std::endl;
 		}
-		catch (Form::GradeTooLowException &e)
+		catch (AForm::GradeTooLowException &e)
 		{
 			std::cout << this->_name << " cant sign " << f.getName() << " because " << e.what() << std::endl;
 		}
@@ -77,7 +77,7 @@ void	Bureaucrat::signForm(Form &f)
 		f.beSigned(*this);
 }
 
-void	Bureaucrat::executeForm(Form const &form) const
+void	Bureaucrat::executeForm(AForm const &form) const
 {
 	try
 	{

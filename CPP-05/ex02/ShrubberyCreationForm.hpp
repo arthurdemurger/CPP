@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:45:14 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 13:25:52 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:04:55 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
-#include <istream>
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm
 {

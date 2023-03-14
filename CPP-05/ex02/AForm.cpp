@@ -37,7 +37,7 @@ AForm	&AForm::operator=(const AForm &rhs)
 		return (*this);
 }
 
-void	AForm::beSigned(Bureaucrat &b)
+void	AForm::beSigned(const Bureaucrat &b)
 {
 	if (this->_isSigned == true)
 		std::cout << "AForm already signed \n";
