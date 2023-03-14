@@ -6,56 +6,22 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 10:24:31 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:07:52 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:21:25 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main( void )
 {
-try
-	{
-		Bureaucrat  *bureaucrat = new Bureaucrat("Bureaucrat", 40);
-		AForm		*form = new PresidentialPardonForm("Form");
-		AForm		*form2 = new RobotomyRequestForm("Form2");
-		AForm		*form3 = new ShrubberyCreationForm("Chajarat_l3a2ila");
+	Intern someRandomIntern;
+	AForm* rrf;
+	Bureaucrat	bureaucrat1("Sam", 20);
+	Bureaucrat	bureaucrat2("Tom", 80);
 
-		std::cout << *bureaucrat << std::endl;
-		std::cout << *form << std::endl;
-		std::cout << *form2 << std::endl;
-		std::cout << *form3 << std::endl;
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << "Sign Form section " << std::endl;
-		bureaucrat->signForm(*form);
-		bureaucrat->signForm(*form2);
-		bureaucrat->signForm(*form3);
-
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << *bureaucrat << std::endl;
-		std::cout << *form << std::endl;
-		std::cout << *form2 << std::endl;
-		std::cout << *form3 << std::endl;
-
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << "Execute Form section " << std::endl;
-		bureaucrat->executeForm(*form);
-		bureaucrat->executeForm(*form2);
-		bureaucrat->executeForm(*form3);
-
-		delete bureaucrat;
-		delete form;
-		delete form2;
-		delete form3;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Grade out of range " << '\n';
-	}
-
+	rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+	bureaucrat2.signForm(*rrf);
+	bureaucrat1.signForm(*rrf);
+	delete rrf;
 	return EXIT_SUCCESS;
 }

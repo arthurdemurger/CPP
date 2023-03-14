@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/14 15:13:40 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/14 19:20:54 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ RM			=	rm -f
 
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME 		=	Bureaucrat
+NAME 		=	Intern
 
 all:		$(NAME)
 
