@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 13:45:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 12:40:06 by ademurge         ###   ########.fr       */
+/*   Created: 2023/03/14 12:32:10 by ademurge          #+#    #+#             */
+/*   Updated: 2023/03/14 13:25:23 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
 
-#include <iostream>
-#include "Brain.hpp"
+#define PRESIDENTIALPARDONFORM_HPP
 
-class AAnimal
+#include "AForm.hpp"
+
+class PresidentialPardonForm : public AForm
 {
 	public:
-		AAnimal();
-		AAnimal(std::string type);
-		AAnimal(const AAnimal &a);
-		AAnimal &operator=(const AAnimal &rhs);
-		virtual ~AAnimal();
+		PresidentialPardonForm(const std::string &target);
+		~PresidentialPardonForm(void);
+		PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
 
-		virtual void	makeSound() const = 0;
-		std::string		getType() const;
-	protected:
-		std::string	_type;
+		void execute(const Bureaucrat& executor) const;
+	private:
+		PresidentialPardonForm();
+		std::string	_target;
 };
 
 #endif

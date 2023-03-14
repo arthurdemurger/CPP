@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                        :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 13:45:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 12:40:06 by ademurge         ###   ########.fr       */
+/*   Created: 2023/03/14 12:44:24 by ademurge          #+#    #+#             */
+/*   Updated: 2023/03/14 13:25:44 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
 
-#include <iostream>
-#include "Brain.hpp"
+#define ROBOTOMYREQUESTFORM_HPP
 
-class AAnimal
+#include "AForm.hpp"
+
+class RobotomyRequestForm : public AForm
 {
 	public:
-		AAnimal();
-		AAnimal(std::string type);
-		AAnimal(const AAnimal &a);
-		AAnimal &operator=(const AAnimal &rhs);
-		virtual ~AAnimal();
+		RobotomyRequestForm(const std::string &target);
+		~RobotomyRequestForm(void);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
 
-		virtual void	makeSound() const = 0;
-		std::string		getType() const;
-	protected:
-		std::string	_type;
+		void execute(const Bureaucrat& executor) const;
+	private:
+		RobotomyRequestForm();
+		std::string	_target;
 };
 
 #endif
