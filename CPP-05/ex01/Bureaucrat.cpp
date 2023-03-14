@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:44:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 11:28:35 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:18:49 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ Bureaucrat::~Bureaucrat(void)
 
 void	Bureaucrat::signForm(Form &f)
 {
+	if (f.getIsSigned() == false)
 		try
 		{
 			f.beSigned(*this);
@@ -72,6 +73,8 @@ void	Bureaucrat::signForm(Form &f)
 		{
 			std::cout << this->_name << " cant sign " << f.getName() << " because " << e.what() << std::endl;
 		}
+	else
+		f.beSigned(*this);
 }
 
 int	Bureaucrat::getGrade (void) const
@@ -84,7 +87,7 @@ std::string	Bureaucrat::getName (void) const
 	return (this->_name);
 }
 
-std::ostream& operator<<( std::ostream& o, const Bureaucrat& rhs ) {
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs) {
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return (o);
 }

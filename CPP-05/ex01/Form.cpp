@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:15:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 11:52:15 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:29:32 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,12 @@ Form::~Form(void)
 {
 }
 
-// Form	&Form::operator=(const Form &rhs)
-// {
-// 	if (this == &rhs)
-// 		return (*this);
-// 	_execGrade = rhs.getExecGrade();
-// 	_signGrade = rhs.getSignGrade();
-// 	_execGrade = rhs.getExecGrade();
-// 	return (*this);
-// }
+Form	&Form::operator=(const Form &rhs)
+{
+	if (this != &rhs)
+		this->_isSigned = rhs.getIsSigned();
+		return (*this);
+}
 
 void	Form::beSigned(Bureaucrat &b)
 {
