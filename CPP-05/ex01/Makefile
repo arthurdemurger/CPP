@@ -6,12 +6,13 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/06 14:06:01 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/14 10:19:35 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC			=	main.cpp \
-				Bureaucrat.cpp
+				Bureaucrat.cpp \
+				Form.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
