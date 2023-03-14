@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 12:16:08 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:57:24 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
 
-	delete j;//should not create a leak
+	delete j;
 	delete i;
 
 	std::cout << std::endl << "****** Constructors ******" << std::endl;

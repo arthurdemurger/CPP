@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:36:45 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:52:30 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,36 @@
 
 int main(void)
 {
-	std::cout << "******* ANIMAL *******" << std::endl;
+	std::cout << "************** ANIMAL **************" << std::endl;
 
 	const Animal* meta = new Animal();
 	const Animal* scooby = new Dog();
 	const Animal* garfield = new Cat();
 
+	std::cout << "---------------------" << std::endl;
 	std::cout << scooby->getType() << " " << std::endl;
 	std::cout << garfield->getType() << " " << std::endl;
-	scooby->makeSound(); //will output the cat sound!
+	scooby->makeSound();
 	garfield->makeSound();
 	meta->makeSound();
 
+	std::cout << "---------------------" << std::endl;
 	delete meta;
 	delete garfield;
 	delete scooby;
 
-	std::cout <<std::endl << "******* WRONG ANIMAL *******" << std::endl;
+	std::cout <<std::endl << "\n************** WRONG ANIMAL **************" << std::endl;
 
 	const WrongAnimal *wrong = new WrongAnimal();
 	const WrongAnimal *wrongCat = new WrongCat();
 
+	std::cout << "---------------------" << std::endl;
 	std::cout << "Wrong Type: " << wrong->getType() << " " << std::endl;
 	std::cout << "WrongCat Type: " << wrongCat->getType() << " " << std::endl;
 	wrong->makeSound();
 	wrongCat->makeSound();
 
+	std::cout << "---------------------" << std::endl;
 	delete  wrong;
 	delete  wrongCat;
 

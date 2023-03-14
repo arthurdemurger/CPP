@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 12:15:18 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:54:33 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int main(void)
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	delete j;//should not create a leak
+	delete j;
 	delete i;
 
-	std::cout << std::endl << "****** Constructors ******" << std::endl;
+	std::cout << std::endl << "********************" << std::endl;
 	Animal	*animalArray[4];
 
 	for (int i = 0; i < 4; i++)
@@ -32,7 +32,7 @@ int main(void)
 			animalArray[i] = new Cat();
 	}
 
-	std::cout << std::endl << "****** Destructors ******" << std::endl;
+	std::cout << std::endl << "********************" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete animalArray[i];
 	return (0);
