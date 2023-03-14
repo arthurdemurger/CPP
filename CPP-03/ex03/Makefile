@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/01 13:26:54 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/14 12:03:50 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RM			=	rm -f
 
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME 		=	FragTrap
+NAME 		=	DiamondTrap
 
 all:		$(NAME)
 
