@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:07:29 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/15 11:14:47 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:05:01 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
@@ -27,12 +29,12 @@ class AMateria
 
 		std::string const	&getType() const;
 		virtual AMateria	*clone() const = 0;
-		// virtual void	use(ICharacter &target);
+		virtual void		use(ICharacter &target);
 
 	protected:
 		std::string	_type;
 	private:
-		AMateria();
+		AMateria(void);
 };
 
 

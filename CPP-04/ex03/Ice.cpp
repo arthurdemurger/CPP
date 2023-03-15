@@ -6,17 +6,29 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:36:50 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/15 11:37:26 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:25:26 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice(void) : AMateria("Ice") { }
+/*
+** ------------------------------- CONSTRUCTOR --------------------------------
+*/
+
+Ice::Ice(void) : AMateria("ice") { }
 
 Ice::Ice(const Ice &copy) : AMateria(copy) { }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
+
 Ice::~Ice(void) { }
+
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 
 Ice	&Ice::operator=(const Ice &rhs)
 {
@@ -25,7 +37,16 @@ Ice	&Ice::operator=(const Ice &rhs)
 	return (*this);
 }
 
+/*
+** ------------------------------- METHODS --------------------------------
+*/
+
 AMateria	*Ice::clone(void) const
 {
 	return (new Ice(*this));
+}
+
+void		Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 }

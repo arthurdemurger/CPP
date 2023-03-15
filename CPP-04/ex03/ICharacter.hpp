@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:40:27 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/15 11:45:36 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:53:45 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 #include <iostream>
 #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

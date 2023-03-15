@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 11:46:45 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/15 11:50:06 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/15 17:54:38 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC			=	main.cpp \
 				ICharacter.cpp \
 				Cure.cpp \
 				Ice.cpp \
-				IMateria.cpp
+				MateriaSource.cpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
@@ -27,7 +27,7 @@ RM			=	rm -f
 
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME 		=	Animal
+NAME 		=	IceCure
 
 all:		$(NAME)
 
