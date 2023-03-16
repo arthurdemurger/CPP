@@ -6,16 +6,25 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:55:46 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:08:38 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:07:23 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
+/*
+** ------------------------------- CONSTRUCTOR --------------------------------
+*/
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {}
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 RobotomyRequestForm::~RobotomyRequestForm(void){}
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
 {
 	if (this != &rhs)
@@ -23,6 +32,9 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 	return (*this);
 }
 
+/*
+** ------------------------------- METHOD --------------------------------
+*/
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	if (this->getIsSigned() != true)

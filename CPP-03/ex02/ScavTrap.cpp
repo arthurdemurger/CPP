@@ -6,12 +6,15 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:24:40 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/01 13:08:39 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:50:38 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->_hp = 100;
@@ -34,6 +37,9 @@ ScavTrap::ScavTrap(const ScavTrap &s)
 	*this = s;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap " << this->_name << " destructor called" << std::endl;
@@ -48,6 +54,9 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& rhs)
 	return (*this);
 }
 
+/*
+** ------------------------------- METHODS --------------------------------
+*/
 void	ScavTrap::attack(const std::string& target)
 {
 	if (!this->_hp)

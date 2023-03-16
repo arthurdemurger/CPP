@@ -6,13 +6,16 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 17:36:14 by ademurge          #+#    #+#             */
-/*   Updated: 2023/02/15 11:48:10 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:40:10 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "PhoneBook.hpp"
 
-/* Constructor */
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
+
 PhoneBook::PhoneBook(void)
 {
 	//std::cout << "Constructor called" << std::endl;
@@ -20,14 +23,18 @@ PhoneBook::PhoneBook(void)
 	return ;
 }
 
-/* Destructor */
+/*
+** ------------------------------- DESTRUCTORS --------------------------------
+*/
 PhoneBook::~PhoneBook(void)
 {
 	//std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
-/* Setter */
+/*
+** ------------------------------- METHODS --------------------------------
+*/
 
 void	PhoneBook::incrementIndex(void)
 {

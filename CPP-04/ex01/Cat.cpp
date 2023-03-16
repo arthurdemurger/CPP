@@ -6,12 +6,15 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:28 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:57:31 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:54:27 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 Cat::Cat(void) : Animal("Cat")
 {
 	this->_brain = new Brain();
@@ -24,12 +27,18 @@ Cat::Cat(const Cat &c)
 	*this = c;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 Cat::~Cat(void)
 {
 	delete this->_brain;
 	std::cout << "Cat " << this->_type << " destructor called." << std::endl;
 }
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 Cat&	Cat::operator=(const Cat &rhs)
 {
 	if (this != &rhs)
@@ -41,6 +50,9 @@ Cat&	Cat::operator=(const Cat &rhs)
 	return (*this);
 }
 
+/*
+** ------------------------------- METHOD --------------------------------
+*/
 void	Cat::makeSound(void) const
 {
 	std::cout << "Cat " << this->_type << " : * Miaou miaou *" << std::endl;

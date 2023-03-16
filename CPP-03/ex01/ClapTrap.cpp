@@ -6,12 +6,15 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:12:32 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/01 13:07:12 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:49:15 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 ClapTrap::ClapTrap(void) : _name("Default"), _hp(10), _energy(10), _damage(0)
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -28,6 +31,9 @@ ClapTrap::ClapTrap(const ClapTrap &c)
 	*this = c;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "ClapTrap " << this->_name << " destructor called" << std::endl;
@@ -42,7 +48,9 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& rhs)
 	return (*this);
 }
 
-
+/*
+** ------------------------------- METHODS --------------------------------
+*/
 void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->_hp)

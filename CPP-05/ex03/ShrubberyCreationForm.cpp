@@ -6,16 +6,25 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:02:58 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:11:49 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:07:48 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
+/*
+** ------------------------------- CONSTRUCTOR --------------------------------
+*/
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
 {
 	if (this != &rhs)
@@ -23,6 +32,9 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
+/*
+** ------------------------------- METHOD --------------------------------
+*/
 void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	if (this->getIsSigned() != true)

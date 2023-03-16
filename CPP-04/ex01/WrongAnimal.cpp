@@ -6,12 +6,15 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:08 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:38:08 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:55:17 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
 	std::cout << "WrongAnimal " << this->_type << " string constructor called." << std::endl;
@@ -28,22 +31,34 @@ WrongAnimal::WrongAnimal(const WrongAnimal &a)
 	*this = a;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 WrongAnimal::~WrongAnimal(void)
 {
 	std::cout << "WrongAnimal " << this->_type << " destructor called." << std::endl;
 }
 
+/*
+** ------------------------------- METHOD --------------------------------
+*/
 void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "WrongAnimal " << this->_type << " : * WrongAnimal sound *" << std::endl;
 }
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal &rhs)
 {
 	this->_type = rhs._type;
 	return (*this);
 }
 
+/*
+** ------------------------------- ACCESSOR --------------------------------
+*/
 std::string	WrongAnimal::getType(void) const
 {
 	return this->_type;

@@ -6,13 +6,16 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:32 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:57:58 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:54:47 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Dog.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 Dog::Dog(void) : Animal("Dog")
 {
 	this->_brain = new Brain();
@@ -25,12 +28,18 @@ Dog::Dog(const Dog &c)
 	*this = c;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 Dog::~Dog(void)
 {
 	delete this->_brain;
 	std::cout << "Dog " << this->_type << " destructor called." << std::endl;
 }
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 Dog&	Dog::operator=(const Dog &rhs)
 {
 	if (this != &rhs)
@@ -42,6 +51,9 @@ Dog&	Dog::operator=(const Dog &rhs)
 	return (*this);
 }
 
+/*
+** ------------------------------- METHOD --------------------------------
+*/
 void	Dog::makeSound(void) const
 {
 	std::cout << "Dog " << this->_type << " : * Waf waf *" << std::endl;

@@ -6,12 +6,15 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:08 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/06 11:37:35 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:53:55 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 Animal::Animal(std::string type) : _type(type)
 {
 	std::cout << "Animal " << this->_type << " string constructor called." << std::endl;
@@ -28,22 +31,34 @@ Animal::Animal(const Animal &a)
 	*this = a;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 Animal::~Animal(void)
 {
 	std::cout << "Animal " << this->_type << " destructor called." << std::endl;
 }
 
+/*
+** ------------------------------- METHODS --------------------------------
+*/
 void	Animal::makeSound(void) const
 {
 	std::cout << "Animal " << this->_type << " : * Animal sound * " << std::endl;
 }
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 Animal&	Animal::operator=(const Animal &rhs)
 {
 	this->_type = rhs._type;
 	return (*this);
 }
 
+/*
+** ------------------------------- ACCESSOR --------------------------------
+*/
 std::string	Animal::getType(void) const
 {
 	return this->_type;

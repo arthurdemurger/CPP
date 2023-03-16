@@ -12,6 +12,9 @@
 
 #include "AForm.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 AForm::AForm(const std::string name, int signGrade, int execGrade) : _name(name), _signGrade(signGrade), _execGrade(execGrade)
 {
 	_isSigned = false;
@@ -26,10 +29,16 @@ AForm::AForm(const AForm &f) : _name(f._name), _signGrade(f._signGrade), _execGr
 	_isSigned = false;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 AForm::~AForm(void)
 {
 }
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 AForm	&AForm::operator=(const AForm &rhs)
 {
 	if (this != &rhs)
@@ -37,6 +46,15 @@ AForm	&AForm::operator=(const AForm &rhs)
 		return (*this);
 }
 
+std::ostream& operator<<( std::ostream& o, const AForm& rhs )
+{
+	o << rhs.getName();
+	return (o);
+}
+
+/*
+** ------------------------------- METHODS --------------------------------
+*/
 void	AForm::beSigned(const Bureaucrat &b)
 {
 	if (this->_isSigned == true)
@@ -49,6 +67,9 @@ void	AForm::beSigned(const Bureaucrat &b)
 	}
 }
 
+/*
+** ------------------------------- ACCESSOR --------------------------------
+*/
 std::string	AForm::getName(void) const
 {
 	return (this->_name);
@@ -69,7 +90,4 @@ bool	AForm::getIsSigned(void) const
 	return (this->_isSigned);
 }
 
-std::ostream& operator<<( std::ostream& o, const AForm& rhs ) {
-	o << rhs.getName();
-	return (o);
-}
+

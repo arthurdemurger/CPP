@@ -6,13 +6,15 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:04:35 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/07 12:30:59 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:47:22 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-/****************** Constructors & Destructor ******************/
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 Point::Point(void) : _x(0), _y(0)
 {
 	// std::cout << "Default point constructor called" << std::endl;
@@ -29,15 +31,17 @@ Point::Point(const Point &p)
 	// std::cout << "Copy point constructor called" << std::endl;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 Point::~Point(void)
 {
 	// std::cout << "Point destructor called" << std::endl;
 }
-/**************************************************/
 
-
-
-/****************** Member functions ******************/
+/*
+** ------------------------------- METHODS --------------------------------
+*/
 Fixed	Point::getX(void) const
 {
 	return (this->_x.toFloat());
@@ -47,10 +51,10 @@ Fixed	Point::getY(void) const
 {
 	return (this->_y.toFloat());
 }
-/******************************************************/
 
-
-/****************** Operator overloading ******************/
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 Point	&Point::operator=(const Point &rhs)
 {
 	if (this != &rhs)
@@ -60,4 +64,3 @@ Point	&Point::operator=(const Point &rhs)
 	}
 	return (*this);
 }
-/**********************************************************/

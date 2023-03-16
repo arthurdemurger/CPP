@@ -6,13 +6,16 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 17:36:10 by ademurge          #+#    #+#             */
-/*   Updated: 2023/02/15 10:26:55 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:38:18 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-/* Constructor */
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
+
 Contact::Contact(void)
 {
 	//std::cout << "Constructor called" << std::endl;
@@ -21,7 +24,10 @@ Contact::Contact(void)
 }
 
 
-/* Destructor */
+/*
+** ------------------------------- DESTRUCTORS --------------------------------
+*/
+
 Contact::~Contact(void)
 {
 	//std::cout << "Destructor called" << std::endl;
@@ -29,7 +35,9 @@ Contact::~Contact(void)
 }
 
 
-/* Getters */
+/*
+** ------------------------------- ACCESSOR --------------------------------
+*/
 std::string	Contact::getDarkSecret(void) const
 {
 	return (this->darkSecret);
@@ -54,9 +62,6 @@ unsigned long long	Contact::getPhoneNumber(void) const
 {
 	return (this->phoneNumber);
 }
-
-
-/* Setters */
 
 void	Contact::setDarkSecret(std::string s)
 {

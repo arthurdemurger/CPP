@@ -6,24 +6,36 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:13:30 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 19:16:25 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:06:46 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-Intern::Intern (void) {}
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
+Intern::Intern (void) { }
 
 Intern::Intern(const Intern &copy){ (void) copy; }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
+Intern::~Intern(void) { }
+
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 Intern	&Intern::operator=(const Intern &rhs)
 {
 	(void) rhs;
 	return (*this);
 }
 
-Intern::~Intern(void){}
-
+/*
+** ------------------------------- METHOD --------------------------------
+*/
 AForm	*Intern::makeForm(std::string form, std::string target)
 {
 	std::string forms[3] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};

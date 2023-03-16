@@ -6,12 +6,15 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:15:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 12:29:32 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:01:13 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
+/*
+** ------------------------------- CONSTRUCTORS --------------------------------
+*/
 Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _signGrade(signGrade), _execGrade(execGrade)
 {
 	_isSigned = false;
@@ -26,10 +29,16 @@ Form::Form(const Form &f) : _name(f._name), _signGrade(f._signGrade), _execGrade
 	_isSigned = false;
 }
 
+/*
+** ------------------------------- DESTRUCTOR --------------------------------
+*/
 Form::~Form(void)
 {
 }
 
+/*
+** ------------------------------- OVERLOAD --------------------------------
+*/
 Form	&Form::operator=(const Form &rhs)
 {
 	if (this != &rhs)
@@ -37,6 +46,15 @@ Form	&Form::operator=(const Form &rhs)
 		return (*this);
 }
 
+std::ostream& operator<<( std::ostream& o, const Form& rhs )
+{
+	o << rhs.getName();
+	return (o);
+}
+
+/*
+** ------------------------------- METHODS --------------------------------
+*/
 void	Form::beSigned(Bureaucrat &b)
 {
 	if (this->_isSigned == true)
@@ -49,27 +67,13 @@ void	Form::beSigned(Bureaucrat &b)
 	}
 }
 
-std::string	Form::getName(void) const
-{
-	return (this->_name);
-}
+/*
+** ------------------------------- ACCESSOR --------------------------------
+*/
+std::string	Form::getName(void) const { return (this->_name); }
 
-int	Form::getExecGrade(void) const
-{
-	return (this->_execGrade);
-}
+int	Form::getExecGrade(void) const { return (this->_execGrade); }
 
-int	Form::getSignGrade(void) const
-{
-	return (this->_signGrade);
-}
+int	Form::getSignGrade(void) const { return (this->_signGrade); }
 
-bool	Form::getIsSigned(void) const
-{
-	return (this->_isSigned);
-}
-
-std::ostream& operator<<( std::ostream& o, const Form& rhs ) {
-	o << rhs.getName();
-	return (o);
-}
+bool	Form::getIsSigned(void) const { return (this->_isSigned); }
