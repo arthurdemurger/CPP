@@ -6,40 +6,43 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 11:46:45 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/15 17:54:38 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/16 10:57:01 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME 		=	IceCure
+
+CC			=	c++
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+RM			=	rm -rf
+
+OBJDIR		=	.obj
 
 SRC			=	main.cpp \
 				AMateria.cpp \
 				Character.cpp \
-				ICharacter.cpp \
 				Cure.cpp \
 				Ice.cpp \
+				ICharacter.cpp \
 				MateriaSource.cpp
 
-OBJ			=	$(SRC:.cpp=.o)
+OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
-CC			=	c++
+all:			$(NAME)
 
-RM			=	rm -f
+$(NAME):		$(OBJ)
+				$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-
-NAME 		=	IceCure
-
-all:		$(NAME)
-
-$(NAME):	$(OBJ)
-			$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(OBJDIR)/%.o:	%.cpp
+				@mkdir -p $(dir $@)
+				@$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJ)
+				$(RM) $(OBJDIR) $(OBJ)
 
-fclean:		clean
-			$(RM) $(NAME)
+fclean:			clean
+				$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:				fclean $(NAME)
 
 .PHONY: all clean fclean re
