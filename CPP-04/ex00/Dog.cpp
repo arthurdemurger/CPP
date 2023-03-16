@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:32 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 09:52:48 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:18:27 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Dog::Dog(void) : Animal("Dog")
 Dog::Dog(const Dog &c)
 {
 	std::cout << "Dog " << this->_type << " copy constructor called" << std::endl;
-	*this = c;
+	this->_type = c._type;
 }
 
 /*

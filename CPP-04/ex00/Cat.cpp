@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:28 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 09:52:30 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:18:17 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::Cat(void) : Animal("Cat")
 Cat::Cat(const Cat &c)
 {
 	std::cout << "Cat " << this->_type << " copy constructor called" << std::endl;
-	*this = c;
+	this->_type = c._type;
 }
 
 /*

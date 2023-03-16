@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:12:54 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/15 18:05:23 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:29:04 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 AMateria::AMateria(std::string const &type) : _type(type) { }
 
-AMateria::AMateria(const AMateria &copy) { *this = copy; }
+AMateria::AMateria(const AMateria &copy) { this->_type = copy._type; }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------

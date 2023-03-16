@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:28 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 09:54:27 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:14:55 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ Cat::Cat(void) : Animal("Cat")
 	std::cout << "Cat " << this->_type << " string constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat &c)
+Cat::Cat(const Cat &c) : Animal("Cat")
 {
 	std::cout << "Cat " << this->_type << " copy constructor called" << std::endl;
-	*this = c;
+	this->_brain = new Brain(*c._brain);
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:54:33 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:16:55 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ int main(void)
 	std::cout << std::endl << "********************" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete animalArray[i];
-	return (0);
 };

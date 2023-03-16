@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:08 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 09:56:09 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:25:42 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ AAnimal::AAnimal(std::string type) : _type(type)
 	std::cout << "AAnimal " << this->_type << " string constructor called." << std::endl;
 }
 
-AAnimal::AAnimal(void)
+AAnimal::AAnimal(void) : _type("Animal")
 {
 	std::cout << "AAnimal default constructor called" << std::endl;
 }
@@ -53,5 +53,5 @@ AAnimal&	AAnimal::operator=(const AAnimal &rhs)
 */
 std::string	AAnimal::getType(void) const
 {
-	return this->_type;
+	return (this->_type);
 }

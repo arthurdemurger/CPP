@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:52:30 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:20:40 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main(void)
 	const Animal* garfield = new Cat();
 
 	std::cout << "---------------------" << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
 	std::cout << scooby->getType() << " " << std::endl;
 	std::cout << garfield->getType() << " " << std::endl;
 	scooby->makeSound();
@@ -31,8 +32,8 @@ int main(void)
 
 	std::cout << "---------------------" << std::endl;
 	delete meta;
-	delete garfield;
 	delete scooby;
+	delete garfield;
 
 	std::cout <<std::endl << "\n************** WRONG ANIMAL **************" << std::endl;
 

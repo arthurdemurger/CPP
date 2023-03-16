@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:19:32 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 09:54:47 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:13:44 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ Dog::Dog(void) : Animal("Dog")
 	std::cout << "Dog " << this->_type << " string constructor called." << std::endl;
 }
 
-Dog::Dog(const Dog &c)
+Dog::Dog(const Dog &c) : Animal("Dog")
 {
 	std::cout << "Dog " << this->_type << " copy constructor called" << std::endl;
-	*this = c;
+	this->_brain = new Brain(*c._brain);
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:46:18 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:57:24 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:27:31 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main(void)
 			animalArray[i] = new Dog();
 		else
 			animalArray[i] = new Cat();
+		std::cout << std::endl;
 	}
 
 	std::cout << std::endl << "****** Destructors ******" << std::endl;

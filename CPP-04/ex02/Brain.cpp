@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 11:45:08 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 09:56:21 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:26:00 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Brain::Brain(void)
 Brain::Brain(const Brain &b)
 {
 	std::cout << "Brain copy constructor called." << std::endl;
-	*this = b;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = b.ideas[i];
 }
 
 /*
