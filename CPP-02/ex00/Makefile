@@ -6,34 +6,38 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/02/16 13:52:59 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/16 10:49:29 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME 		=	fixed
+
+CC			=	c++
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+RM			=	rm -rf
+
+OBJDIR		=	.obj
 
 SRC			=	main.cpp \
 				Fixed.cpp
 
-OBJ			=	$(SRC:.cpp=.o)
+OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
-CC			=	c++
+all:			$(NAME)
 
-RM			=	rm -f
+$(NAME):		$(OBJ)
+				$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-
-NAME 		=	fixed
-
-all:		$(NAME)
-
-$(NAME):	$(OBJ)
-			$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(OBJDIR)/%.o:	%.cpp
+				@mkdir -p $(dir $@)
+				@$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJ)
+				$(RM) $(OBJDIR) $(OBJ)
 
-fclean:		clean
-			$(RM) $(NAME)
+fclean:			clean
+				$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:				fclean $(NAME)
 
 .PHONY: all clean fclean re
