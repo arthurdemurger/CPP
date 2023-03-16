@@ -6,9 +6,17 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/14 12:03:50 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/16 10:51:43 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME 		=	diamondtrap
+
+CC			=	c++
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+RM			=	rm -rf
+
+OBJDIR		=	.obj
 
 SRC			=	main.cpp \
 				ClapTrap.cpp \
@@ -16,27 +24,23 @@ SRC			=	main.cpp \
 				FragTrap.cpp \
 				DiamondTrap.cpp
 
-OBJ			=	$(SRC:.cpp=.o)
+OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
-CC			=	c++
+all:			$(NAME)
 
-RM			=	rm -f
+$(NAME):		$(OBJ)
+				$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
-
-NAME 		=	DiamondTrap
-
-all:		$(NAME)
-
-$(NAME):	$(OBJ)
-			$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(OBJDIR)/%.o:	%.cpp
+				@mkdir -p $(dir $@)
+				@$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJ)
+				$(RM) $(OBJDIR) $(OBJ)
 
-fclean:		clean
-			$(RM) $(NAME)
+fclean:			clean
+				$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:				fclean $(NAME)
 
 .PHONY: all clean fclean re
