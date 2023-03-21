@@ -66,7 +66,7 @@
 // }
 int	main(int ac, char **av)
 {
-
+	char	c;
 	// int			type_var;
 
 	if (ac != 2)
@@ -77,7 +77,8 @@ int	main(int ac, char **av)
 	std::string	src(av[1]);
 	Scalar test(src);
 
-	std::cout << static_cast<char> (test) << std::endl;
+	c = static_cast<char>(test);
+	(void) c;
 	// type_var = which_var(src);
 	// switch (type_var)
 	// {

@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:06:22 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/20 23:38:24 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/21 09:54:11 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ Scalar::operator char (void)
 	{
 			c = _str[0];
 	}
+
+	if (d >= std::numeric_limits<char>::min()
+		&& d <= std::numeric_limits<char>::max())
+	{
+		if (d < 32 || d > 126)
+			std::cout << "char: Non displayable" << std::endl;
+		else
+			std::cout << "char: '" << c << "'" << std::endl;
+	}
+	else
+		std::cout << "char: impossible" << std::endl;
 	// c = static_cast<char>(n);
 	// if (n >= CHAR_MIN && n <= CHAR_MAX)
 	// {

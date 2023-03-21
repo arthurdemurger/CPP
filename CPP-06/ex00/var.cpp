@@ -6,11 +6,11 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:31:25 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 15:47:33 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/21 09:37:53 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scalar.hpp"
+#include "Scalar.hpp"
 
 static bool	isChar(std::string src)
 {
