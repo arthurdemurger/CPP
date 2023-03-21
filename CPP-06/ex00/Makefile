@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/21 09:44:28 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/21 11:33:46 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ RM			=	rm -rf
 OBJDIR		=	.obj
 
 SRC			=	main.cpp \
-				Scalar.cpp \
-				Var.cpp
+				Scalar.cpp
 
 OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 

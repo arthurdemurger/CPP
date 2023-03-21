@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:40:39 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/20 23:23:35 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/21 11:48:45 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 /* Libraries */
 #include <iostream>
 #include <limits.h>
-int	which_var(std::string src);
 
 /* Define constants*/
 # define CHAR 1
@@ -37,12 +36,14 @@ class Scalar
 		std::string	getStr(void) const;
 
 		operator char();
-		// operator int();
-		// operator float();
-		// operator double();
+		operator int();
+		operator float();
+		operator double();
 	private:
 		Scalar();
 		std::string	_str;
+		bool	isInf(std::string str);
+		bool	isInff(std::string str);
 };
 
 #endif /* SCALAR_HPP */

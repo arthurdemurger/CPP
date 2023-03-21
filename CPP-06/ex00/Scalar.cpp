@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scalar.cpp                                         :+:      :+:    :+:   */
+/*   Scalar.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:06:22 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/21 09:54:11 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:03:41 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,38 +42,153 @@ std::string	Scalar::getStr(void) const { return (this->_str); }
 */
 Scalar::operator char (void)
 {
-	char	c;
-	int		d;
+	char	c = 0;
+	int		d = 0;
 
+	if (isInf(_str) || isInff(_str))
+	{
+			std::cout << "char: impossible" << std::endl;
+			return (0);
+	}
+	if (this->_str.length() == 1)
+	{
+		try
+		{
+			d = stoi(this->_str);
+			c = static_cast<char>(d);
+		}
+		catch (const std::invalid_argument &ia)
+		{
+			c = _str[0];
+		}
+		if (c >= 32 && c <= 126)
+			std::cout << "char: '" << c << "'" << std::endl;
+		else
+			std::cout << "char: non displayable" << std::endl;
+	}
+	else
+	{
+		try
+		{
+			d = stoi(this->_str);
+		}
+		catch(const std::invalid_argument& ia)
+		{
+			std::cout << "char: impossible" << std::endl;
+			return (0);
+		}
+		catch(const std::out_of_range& oor)
+		{
+			std::cout << "char : out of range" << std::endl;
+			return (0);
+		}
+		if (d >= std::numeric_limits<char>::min()
+		&& d <= std::numeric_limits<char>::max())
+		{
+			c = static_cast<char>(d);
+			if (d < 32 || d > 126)
+				std::cout << "char: Non displayable" << std::endl;
+			else
+				std::cout << "char: '" << c << "'" << std::endl;
+		}
+		else
+			std::cout << "char: out of range" << std::endl;
+	}
+	return (c);
+}
+
+Scalar::operator int (void)
+{
+	int	n = 0;
+
+	if (_str.length() == 1)
+	{
+		n = static_cast<int>(_str[0]);
+		std::cout << "int: " << n << std::endl;
+		return (n);
+	}
+	else if (isInf(_str) || isInff(_str))
+	{
+			std::cout << "char: impossible" << std::endl;
+			return (0);
+	}
 	try
 	{
-		d = stoi(_str);
-		c = static_cast<char>(d);
+		n = stoi(_str);
+		std::cout << "int: " << n << std::endl;
 	}
 	catch (const std::invalid_argument& ia)
 	{
-			c = _str[0];
+		std::cout << "int: impossible" << std::endl;
+		return (0);
 	}
-
-	if (d >= std::numeric_limits<char>::min()
-		&& d <= std::numeric_limits<char>::max())
+	catch (const std::out_of_range& oor)
 	{
-		if (d < 32 || d > 126)
-			std::cout << "char: Non displayable" << std::endl;
-		else
-			std::cout << "char: '" << c << "'" << std::endl;
+		std::cout << "int: out of range" << std::endl;
 	}
-	else
-		std::cout << "char: impossible" << std::endl;
-	// c = static_cast<char>(n);
-	// if (n >= CHAR_MIN && n <= CHAR_MAX)
-	// {
-		// if (n >= 32 && n <= 126)
-			// std::cout << "char: '" << c << "'" << std::endl;
-		// else
-			// std::cout << "char: Non displayable" << std::endl;
-	// }
-	// else
-		// std::cout << "char: impossible" << std::endl;
-	return (c);
+	return (n);
+}
+
+Scalar::operator float (void)
+{
+	float	f = 0;
+
+	if (_str.length() == 1)
+	{
+		f = static_cast<float>(_str[0]);
+		std::cout << "float: " << f << std::endl;
+		return (f);
+	}
+	try
+	{
+		f = stof(_str);
+		std::cout << "float: " << f << std::endl;
+	}
+	catch (const std::invalid_argument& ia)
+	{
+		std::cout << "float: impossible" << std::endl;
+		return (0);
+	}
+	catch (const std::out_of_range& oor)
+	{
+		std::cout << "float: out of range" << std::endl;
+	}
+	return (f);
+}
+
+Scalar::operator double (void)
+{
+	double	d = 0;
+
+	if (_str.length() == 1)
+	{
+		d = static_cast<double>(_str[0]);
+		std::cout << "double: " << d << std::endl;
+		return (d);
+	}
+	try
+	{
+		d = stof(_str);
+		std::cout << "double: " << d << std::endl;
+	}
+	catch (const std::invalid_argument& ia)
+	{
+		std::cout << "double: impossible" << std::endl;
+		return (0);
+	}
+	catch (const std::out_of_range& oor)
+	{
+		std::cout << "double: out of range" << std::endl;
+	}
+	return (d);
+}
+
+bool	Scalar::isInf(std::string str)
+{
+	return (str == "inf" || str == "+inf" || str == "-inf" || str == "nan");
+}
+
+bool	Scalar::isInff(std::string str)
+{
+	return (str == "inff" || str == "+inff" || str == "-inff" || str == "nanf");
 }
