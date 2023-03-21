@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:06:22 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/21 12:03:41 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:43:38 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ Scalar::operator float (void)
 	if (_str.length() == 1)
 	{
 		f = static_cast<float>(_str[0]);
-		std::cout << "float: " << f << std::endl;
+		std::cout << "float: " << f << ".0f" << std::endl;
 		return (f);
 	}
 	try
@@ -147,7 +147,6 @@ Scalar::operator float (void)
 	catch (const std::invalid_argument& ia)
 	{
 		std::cout << "float: impossible" << std::endl;
-		return (0);
 	}
 	catch (const std::out_of_range& oor)
 	{
@@ -163,7 +162,7 @@ Scalar::operator double (void)
 	if (_str.length() == 1)
 	{
 		d = static_cast<double>(_str[0]);
-		std::cout << "double: " << d << std::endl;
+		std::cout << "double: " << d << ".0" << std::endl;
 		return (d);
 	}
 	try
@@ -174,7 +173,6 @@ Scalar::operator double (void)
 	catch (const std::invalid_argument& ia)
 	{
 		std::cout << "double: impossible" << std::endl;
-		return (0);
 	}
 	catch (const std::out_of_range& oor)
 	{

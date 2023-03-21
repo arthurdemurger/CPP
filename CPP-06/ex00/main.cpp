@@ -19,7 +19,6 @@ int	main(int ac, char **av)
 	int		i;
 	float	f;
 	double	d;
-	// int			type_var;
 
 	if (ac != 2)
 	{
@@ -27,12 +26,12 @@ int	main(int ac, char **av)
 		return (EXIT_FAILURE);
 	}
 	std::string	src(av[1]);
-	Scalar test(src);
+	Scalar convert(src);
 
-	c = static_cast<char>(test);
-	i = static_cast<int>(test);
-	f = static_cast<float>(test);
-	d = static_cast<double>(test);
+	c = static_cast<char>(convert);
+	i = static_cast<int>(convert);
+	f = static_cast<float>(convert);
+	d = static_cast<double>(convert);
 	(void) c;
 	(void) i;
 	(void) f;

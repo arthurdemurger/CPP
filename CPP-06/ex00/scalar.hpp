@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:40:39 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/21 11:48:45 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:32:31 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ class Scalar
 		operator int();
 		operator float();
 		operator double();
+
 	private:
 		Scalar();
 		std::string	_str;
