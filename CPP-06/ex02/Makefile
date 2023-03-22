@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/16 12:59:53 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/22 11:13:08 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ RM			=	rm -rf
 
 OBJDIR		=	.obj
 
-SRC			=	main.cpp
+SRC			=	main.cpp \
+				Base.cpp
 
 OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
