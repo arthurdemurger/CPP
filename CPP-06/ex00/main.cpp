@@ -36,23 +36,4 @@ int	main(int ac, char **av)
 	(void) i;
 	(void) f;
 	(void) d;
-	// type_var = which_var(src);
-	// switch (type_var)
-	// {
-		// case CHAR:
-			// put_char(src);
-			// break;
-		// case INT:
-			// put_int(src);
-			// break;
-		// case FLOAT:
-			// put_float(src);
-			// break;
-		// case DOUBLE:
-			// put_double(src);
-			// break;
-		// default:
-			// std::cout << "nothing\n";
-			// break;
-	// }
 }
