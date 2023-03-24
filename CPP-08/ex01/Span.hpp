@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:11:58 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/23 16:27:14 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 10:41:03 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ class Span
 		Span &operator=(const Span &copy);
 		~Span();
 
-		std::vector<int>	getVec(void) const;
+		std::vector<int>	getVector(void) const;
 		unsigned int		getSize(void) const;
 		unsigned int		getNbOfInts(void) const;
 
 		void			addNumber(int nb);
-		// unsigned int	shortestSpan(void);
+		void			addNumber(int nb, int start, int end);
+		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
 
 	private:
-		// void			sort(std::vector<int> &span);
 		Span();
-		std::vector<int>	_span;
+		std::vector<int>	_vector;
 		unsigned int		_size;
 		unsigned int		_nbOfInts;
 };

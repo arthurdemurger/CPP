@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:08:46 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/23 16:40:40 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 10:44:43 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,20 @@ int main (void)
 
 	try
 	{
-		for (int i = 0; i < 10; i++)
-			span.addNumber(i);
+			span.addNumber(5, 0, 100);
 	}
 	catch (const std::exception &e)
 	{
 		std::cout << "No space left in the span." << std::endl;
 	}
-
-		// std::cout << (span.getVec())[0] << " ";
-
+	std::cout << span;
 	try
 	{
 		std::cout << "[Longest span] : " << span.longestSpan() << std::endl;
+		std::cout << "[Shortest span] : " << span.shortestSpan() << std::endl;
 	}
-	catch(const std::exception& e)
+	catch(const std::out_of_range &oor)
 	{
-		std::cout << "Minimum two elements in the span." << std::endl;
+		std::cout << oor.what() << std::endl;
 	}
 }
