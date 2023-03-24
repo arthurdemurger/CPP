@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:44:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 10:00:02 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 12:39:59 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,18 @@ std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs) {
 */
 void	Bureaucrat::incrementGrade(void)
 {
-	if (this->_grade == 150)
-		throw Bureaucrat::GradeTooHighException();
-	else
-		this->_grade++;
-}
-
-void	Bureaucrat::decrementGrade(void)
-{
 	if (this->_grade == 1)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade--;
+}
+
+void	Bureaucrat::decrementGrade(void)
+{
+	if (this->_grade == 150)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		this->_grade++;
 }
 
 void	Bureaucrat::signForm(Form &f)
