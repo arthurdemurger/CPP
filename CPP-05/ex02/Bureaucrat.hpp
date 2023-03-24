@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:36:02 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:00:41 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 12:45:14 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,13 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw()
-				{
-					return "Grade too high";
-				};
+				virtual const char *what() const throw() { return "Grade too high"; };
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw()
-				{
-					return "Grade too low";
-				};
+				virtual const char *what() const throw() { return "Grade too low"; };
 		};
 
 	private:

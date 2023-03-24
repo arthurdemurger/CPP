@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:15:48 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 14:57:36 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 12:45:52 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,13 @@ class AForm
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw ()
-				{
-					return ("Grade too high");
-				};
+				virtual const char *what() const throw() { return "Grade too high"; };
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *what() const throw()
-				{
-					return "Grade too low";
-				};
+				virtual const char *what() const throw() { return "Grade too low"; };
 		};
 
 		class FormNotSignedException : public std::exception
