@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:08:46 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 10:44:43 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 12:09:43 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main (void)
 
 	try
 	{
-			span.addNumber(5, 0, 100);
+			span.addNumber(5, 0, 1000);
 	}
 	catch (const std::exception &e)
 	{
