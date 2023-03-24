@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:13:30 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 10:06:46 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:59:30 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ AForm	*Intern::makeForm(std::string form, std::string target)
 			ret = new ShrubberyCreationForm(target);
 			break;
 		default:
-			std::cout << "Form " << form << " doesn't exist." << std::endl;
-			break;
+			throw std::exception();
 	}
 	if (ret)
 		std::cout << "Intern creates " << ret->getName() << std::endl;

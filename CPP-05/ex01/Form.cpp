@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:15:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 10:01:13 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:29:38 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ std::ostream& operator<<( std::ostream& o, const Form& rhs )
 void	Form::beSigned(Bureaucrat &b)
 {
 	if (this->_isSigned == true)
-		std::cout << "Form already signed \n";
+		std::cout << this->_name << " already signed \n";
 	else
 	{
 		if (b.getGrade() > this->_signGrade)

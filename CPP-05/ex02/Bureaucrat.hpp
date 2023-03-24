@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:36:02 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 12:45:14 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:34:02 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,24 @@ class AForm;
 class Bureaucrat
 {
 	public:
+		/* Canonical form */
 		Bureaucrat(std::string name, unsigned int grade);
 		Bureaucrat(const Bureaucrat &b);
 		Bureaucrat &operator=(const Bureaucrat &rhs);
 		Bureaucrat();
 		~Bureaucrat();
 
+		/* Accessors */
+		int				getGrade() const;
+		std::string		getName() const;
+
+		/* Methods */
 		void			incrementGrade();
 		void			decrementGrade();
-		std::string		getName() const;
-		int				getGrade() const;
 		void			signForm(AForm &f);
 		void			executeForm(AForm const &form) const;
 
+		/* Exceptions */
 		class GradeTooHighException : public std::exception
 		{
 			public:

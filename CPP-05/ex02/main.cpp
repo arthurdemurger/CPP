@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 10:24:31 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/14 15:07:52 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:48:43 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,29 @@ try
 		Bureaucrat  *bureaucrat = new Bureaucrat("Bureaucrat", 40);
 		AForm		*form = new PresidentialPardonForm("Form");
 		AForm		*form2 = new RobotomyRequestForm("Form2");
-		AForm		*form3 = new ShrubberyCreationForm("Chajarat_l3a2ila");
+		AForm		*form3 = new ShrubberyCreationForm("Form3");
 
-		std::cout << *bureaucrat << std::endl;
-		std::cout << *form << std::endl;
-		std::cout << *form2 << std::endl;
-		std::cout << *form3 << std::endl;
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << "Sign Form section " << std::endl;
+		std::cout << "******************* Sign Form section *******************" << std::endl;
+		std::cout << "[PresidentialPardonForm]\n";
 		bureaucrat->signForm(*form);
+		std::cout << std::endl;
+		std::cout << "[RobotomyRequestForm]\n";
 		bureaucrat->signForm(*form2);
+		std::cout << std::endl;
+		std::cout << "[ShrubberyCreationForm]\n";
 		bureaucrat->signForm(*form3);
+		std::cout << std::endl;
 
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << *bureaucrat << std::endl;
-		std::cout << *form << std::endl;
-		std::cout << *form2 << std::endl;
-		std::cout << *form3 << std::endl;
-
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << "Execute Form section " << std::endl;
+		std::cout << "******************* Execute Form section *******************" << std::endl;
+		std::cout << "[PresidentialPardonForm]\n";
 		bureaucrat->executeForm(*form);
+		std::cout << std::endl;
+		std::cout << "[RobotomyRequestForm]\n";
 		bureaucrat->executeForm(*form2);
+		std::cout << std::endl;
+		std::cout << "[ShrubberyCreationForm]\n";
 		bureaucrat->executeForm(*form3);
+		std::cout << std::endl;
 
 		delete bureaucrat;
 		delete form;

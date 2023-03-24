@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:02:58 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 10:04:31 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:50:04 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 		throw AForm::GradeTooLowException();
 	else
 	{
+		std::cout << "'" << this->getName() + "_shrubbery" << "' file created.\n";
 		std::ofstream myFile(this->getName() + "_shrubbery");
 		myFile << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" << std::endl;
 		myFile << "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" << std::endl;

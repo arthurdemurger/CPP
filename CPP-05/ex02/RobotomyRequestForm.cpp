@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:55:46 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/16 10:04:02 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:42:06 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,12 @@ void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 		throw AForm::GradeTooLowException();
 	else
 	{
-		static int	i;
+		srand(time(0));
 		std::cout << "bzzz bzzz bzzz" << std::endl;
 
-		if (!(i % 2))
+		if (rand() % 2)
 			std::cout << this->_target << " has been robotomized successfully." << std::endl;
 		else
 			std::cout << this->_target << " robotomy failed." << std::endl;
-		i++;
 	}
 }
