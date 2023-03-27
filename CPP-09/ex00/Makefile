@@ -6,11 +6,11 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/22 12:47:49 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/27 10:49:02 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	ex00
+NAME 		=	btc
 
 CC			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
