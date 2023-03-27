@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/27 10:49:02 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/27 12:16:20 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ RM			=	rm -rf
 
 OBJDIR		=	.obj
 
-SRC			=	main.cpp
+SRC			=	main.cpp \
+				BitcoinExchange.cpp
 
 OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
