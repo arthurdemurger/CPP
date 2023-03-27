@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:11:25 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/27 15:55:16 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:16:32 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 
 int main (void)
 {
-	BitcoinExchange	btc;
+// 	BitcoinExchange	btc;
+// 	std::map<int, float>	data, input;
 
-	// int tmp = btc.find_date(20110420);
-	btc.display_value("input.txt");
+// 	btc.display_value("input.txt");
+// 	data = btc.getDataBase();
+// 	input = btc.getInput();
+
+// for(std::map<int, float>::const_iterator it = data.begin(); it != data.end(); ++it)
+// 	std::cout << it->first << " " << it->second << "\n";
+// for(std::map<int, float>::const_iterator it = input.begin(); it != input.end(); ++it)
+// 	std::cout << it->first << " " << it->second << "\n";
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:12:56 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/27 17:10:27 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/27 18:08:57 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,19 @@
 
 #define BITCOINEXCHANGE_HPP
 
+/*
+** ------------------------------- LIBRARIES --------------------------------
+*/
 #include <iostream>
 #include <fstream>
 #include <map>
 #include <string>
 #include <ctime>
+#include <iterator>
 
-class BitcoinExchange
-{
-	public:
-		/* Canonical form */
-		BitcoinExchange();
-		BitcoinExchange(const BitcoinExchange &copy);
-		BitcoinExchange &operator=(const BitcoinExchange &copy);
-		~BitcoinExchange();
-
-		/* Accessor */
-		std::map<int, float>	getMap(void) const;
-
-		/* Public method*/
-		void					display_value(std::string filename);
-
-	private:
-		/* Attributes */
-		std::map<int, float>	_database;
-		std::map<int, float>	_input;
-
-		/* Private methods */
-		int						date_to_int(std::string date);
-		int						find_date(int date);
-		void					parse_data(std::string filename, std::string separator, int location);
-		bool					check_input(std::string filename);
-		bool					is_valid_date(int year, int month, int day);
-		bool					is_leap(int year);
-};
+/*
+** ------------------------------- DEFINE CONSTANTS --------------------------------
+*/
 
 # define JANUARY 1
 # define FEBRUARY 2
@@ -67,4 +46,40 @@ class BitcoinExchange
 
 # define ICI std::cout << "ici\n";
 
-#endif
+/*
+** ------------------------------- UTILS FUNCTIONS --------------------------------
+*/
+int		find_date(std::map<int, float> database, int date);
+int		date_to_int(std::string date);
+bool	check_input(std::string str);
+bool	is_valid_date(int year, int month, int day);
+
+/*
+** ------------------------------- CLASS --------------------------------
+*/
+class BitcoinExchange
+{
+	public:
+		/* Canonical form */
+		BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &copy);
+		BitcoinExchange &operator=(const BitcoinExchange &copy);
+		~BitcoinExchange();
+
+		/* Accessor */
+		std::map<int, float>	getDataBase(void) const;
+		std::map<int, float>	getInput(void) const;
+
+		/* Public method*/
+		void					display_value(std::string filename);
+
+	private:
+		/* Attributes */
+		std::map<int, float>	_database;
+		std::map<int, float>	_input;
+
+		/* Private methods */
+		void					parse_data(std::string filename, std::string separator);
+};
+
+#endif // BITCOIN_EXCHANGE_HPP
