@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:13:38 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/27 18:09:15 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:41:54 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ BitcoinExchange::~BitcoinExchange(void) { }
 /*
 ** ------------------------------- ACCESSOR --------------------------------
 */
-std::map<int, float>	BitcoinExchange::getDataBase(void) const { return (_database); }
-std::map<int, float>	BitcoinExchange::getInput(void) const { return (_input); }
+std::map<std::string, float>	BitcoinExchange::getDataBase(void) const { return (_database); }
+std::map<std::string, float>	BitcoinExchange::getInput(void) const { return (_input); }
 
 /*
 ** ------------------------------- OVERLOAD --------------------------------
@@ -48,42 +48,52 @@ BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &copy)
 /*
 ** ------------------------------- METHODS --------------------------------
 */
-
-void	BitcoinExchange::display_value(std::string filename)
+/* Read the file line by line. Check each line.
+If the input is correct, the function retrieves the date and value,
+compares them with those in the database. It finally displays
+the multiplication of the value by the exchange rate at this date.*/
+bool	BitcoinExchange::display_value(std::string filename)
 {
-	std::ifstream	file;
-	std::string		buf;
-	int				key;
-	float			value;
-	size_t			pos;
+	std::ifstream							file;
+	std::string								buf, date;
+	float									value;
+	size_t									pos;
+	std::map<std::string, float>::iterator	dataIt;
 
 	file.open(filename);
 	if (file.is_open())
 		getline(file, buf);
+	else
+		return (put_error("Error: could not open file."));
 	if (buf.compare("date | value"))
-	{
-			std::cerr << "Error: bad input. => Usage <year/month/day | value>" << std::endl;
-			return ;
-	}
+		return (put_error("Error: wrong input."));
 	while (file.is_open() && !file.eof())
 	{
 		getline(file, buf);
 		if (buf.empty())
-			break ;
+			continue ;
 		if (!check_input(buf))
-			std::cerr << "Error: bad input. => Usage <year/month/day | value>" << std::endl;
+			continue ;
 		pos = buf.find(" | ");
-		key = date_to_int(buf.substr(0, pos));
+		date = buf.substr(0, pos);
 		value = stof(buf.substr(pos + 3, buf.size() - pos + 3));
-		_input[key] = value;
+		dataIt = _database.begin();
+		while ((dataIt != _database.end()) && (date >= dataIt->first))
+			dataIt++;
+		if (dataIt == _database.begin())
+			std::cout << date << " => " << value << " = " << 0 << std::endl;
+		else
+			std::cout << date << " => " << value << " = " << (--dataIt)->second * value << std::endl;
 	}
+	file.close();
+	return (true);
 }
 
+/* Parse the database ('data.csv') into a map container called _database */
 void	BitcoinExchange::parse_data(std::string filename, std::string separator)
 {
 	std::ifstream	file;
-	std::string		buf;
-	int				key;
+	std::string		buf, key;
 	float			value;
 	size_t			pos;
 
@@ -96,8 +106,9 @@ void	BitcoinExchange::parse_data(std::string filename, std::string separator)
 		if (buf.empty())
 			break ;
 		pos = buf.find(separator);
-		key = date_to_int(buf.substr(0, pos));
+		key = buf.substr(0, pos);
 		value = stof(buf.substr(pos + 1, buf.size() - pos + 1));
 		_database[key] = value;
 	}
+	file.close();
 }

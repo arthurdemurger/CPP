@@ -6,35 +6,21 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:50:43 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/27 18:03:25 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:45:00 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int	find_date(std::map<int, float> database, int date)
+/* Displays an error message and returns false. */
+bool	put_error(std::string error)
 {
-	if (database[date])
-		return (date);
-	return (0);
+	std::cout << error << std::endl;
+	return (false);
 }
 
-int	date_to_int(std::string date)
-{
-	int			sum;
-	int			i;
-
-	sum = 0;
-	i = 0;
-	while (date[i] == '-' || (date[i] >= '0' && date[i] <= '9'))
-	{
-		if (date[i] >= '0' && date[i] <= '9')
-			sum = sum * 10 + date[i] - 48;
-		i++;
-	}
-	return (sum);
-}
-
+/* Checks an input line. If an error is found,
+displays a message and returns false.*/
 bool		check_input(std::string str)
 {
 	size_t			pos;
@@ -44,24 +30,29 @@ bool		check_input(std::string str)
 	float			value = 0;
 
 	if (str.empty())
-		return false;
+		return (put_error("Error: wrong input."));
 	if ((pos = str.find("-")) != 4)
-		return (false);
+		return (put_error("Error: wrong input."));
 	year = stoi(str.substr(0, pos));
 	str.erase(0, pos + 1);
 	if ((pos = str.find("-")) != 2)
-		return (false);
+		return (put_error("Error: wrong input."));
 	month = stoi(str.substr(0, pos));
 	str.erase(0, pos + 1);
 	if ((pos = str.find(" ")) != 2)
-		return (false);
+		return (put_error("Error: wrong input."));
 	day = stoi(str.substr(0, pos));
 	str.erase(0, pos);
 	if ((pos = str.find(" | ")) != 0)
-		return (false);
+		return (put_error("Error: wrong input."));
 	str.erase(0, 3);
-	if (!std::isdigit(str[0]) && str[0] != '+' && str[0] != '-')
-		return (false);
+	if (!std::isdigit(str[0]) && str[0] != '+')
+	{
+		if (str[0] != '-')
+			return (put_error("Error: invalid value."));
+		else
+			return (put_error("Error: negative value."));
+	}
 	try
 	{
 		value = stoi(str);
@@ -69,18 +60,18 @@ bool		check_input(std::string str)
 	}
 	catch(const std::invalid_argument &ia)
 	{
-		return (false);
+		return (put_error("Error: invalid value."));
 	}
 	catch(const std::out_of_range &oor)
 	{
-		return (false);
+		return (put_error("Error: value out of range."));
 	}
-	// std::cout << year << "/" << month << "/" << day << " | " << value << std::endl;
 	if (!is_valid_date(year, month, day))
-		return (false);
+		return (put_error("Error: invalid date."));
 	return (true);
 }
 
+/* Checks if a year is a leap year. */
 bool	is_leap(int year)
 {
 	if (year % 4 == 0) {
@@ -97,6 +88,7 @@ bool	is_leap(int year)
 		return (false);
 }
 
+/* Checks if a date is valid. */
 bool	is_valid_date(int year, int month, int day)
 {
 	time_t	t = time(0);
