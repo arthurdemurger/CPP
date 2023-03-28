@@ -6,11 +6,11 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/24 12:02:26 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/28 11:47:40 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	ex01
+NAME 		=	RPN
 
 CC			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
