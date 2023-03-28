@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/24 12:11:25 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/28 15:25:04 by ademurge         ###   ########.fr       */
+/*   Created: 2023/03/28 15:33:29 by ademurge          #+#    #+#             */
+/*   Updated: 2023/03/28 18:09:49 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-int main (int ac, char **av)
+int	ret_pop(std::stack<int> *stack)
 {
-	RPN	calc;
+	int	ret = stack->top();
+	stack->pop();
+	return (ret);
+}
 
-	if (ac != 2)
-		return (RPN::put_error("Error: wrong number of arguments."));
-	calc.calculate(av[1]);
+int	is_operator(std::string elem)
+{
+	if (!elem.compare("+"))
+		return (ADD);
+	else if (!elem.compare("-"))
+		return (SUB);
+	else if (!elem.compare("*"))
+		return (MULT);
+	else if (!elem.compare("/"))
+		return (DIV);
 	return (0);
 }
