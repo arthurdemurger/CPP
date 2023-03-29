@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:14:03 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/28 19:07:56 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/29 10:21:15 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,27 +46,21 @@ int	RPN::calculate(std::string arg)
 		return (RPN::put_error("Error"));
 	while (!arg.empty())
 	{
-		std::cout << "'" << arg << "'" << std::endl;
-		while (arg.at(0) == ' ')
-			arg.erase(0, 1);
-		pos = arg.find(" ");
+		pos = arg.find_first_of(VALID_CHAR);
 		if (pos != std::string::npos)
 		{
-			tmp = arg.substr(0, pos);
+			tmp = arg.substr(pos, 1);
 			arg.erase(0, pos + 1);
+			if ((oper = is_operator(tmp)))
+			{
+				if (do_operator(oper))
+					return (EXIT_FAILURE);
+			}
+			else
+				_stack.push(stoi(tmp));
 		}
 		else
-		{
-			tmp = arg;
-			arg.erase(0, arg.length());
-		}
-		if ((oper = is_operator(tmp)))
-		{
-			if (do_operator(oper))
-				return (EXIT_FAILURE);
-		}
-		else
-			_stack.push(stoi(tmp));
+			break ;
 	}
 	std::cout << _stack.top() << std::endl;
 	return (EXIT_SUCCESS);
@@ -78,8 +72,7 @@ int	RPN::do_operator(int oper)
 {
 	int	a, b;
 
-
-	if (_stack.size() != 2)
+	if (_stack.size() < 2)
 		return (put_error("Error"));
 	b = ret_pop(&_stack);
 	a = ret_pop(&_stack);

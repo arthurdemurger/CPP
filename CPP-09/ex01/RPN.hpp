@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:49:49 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/28 18:47:13 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/29 10:07:23 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #define SUB 2
 #define MULT 3
 #define DIV 4
+#define VALID_CHAR "0123456789+-/*"
 
 /* Utils functions */
 int	is_operator(std::string elem);
