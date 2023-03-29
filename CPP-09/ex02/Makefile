@@ -6,11 +6,11 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/24 12:02:28 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/29 12:06:04 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	ex02
+NAME 		=	PmergeMe
 
 CC			=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
@@ -18,7 +18,8 @@ RM			=	rm -rf
 
 OBJDIR		=	.obj
 
-SRC			=	main.cpp
+SRC			=	main.cpp \
+				PmergeMe.cpp
 
 OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
