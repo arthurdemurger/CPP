@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:35:42 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 16:29:49 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:40:39 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,52 +69,28 @@ void	PmergeMe::display_all(int ac, char **av)
 {
 	int	i = 0;
 
-	std::cout << "Before:";
+	std::cout << "Before: ";
 	while (++i < ac)
 		std::cout << av[i] << " ";
 	std::cout << std::endl;
 
-	std::cout << "After:";
+	std::cout << "After:  ";
 	std::vector<unsigned int>::iterator	it = _vec.begin();
 	while (it != _vec.end())
-		std::cout << *it << " ";
+		std::cout << *(it++) << " ";
 	std::cout << std::endl;
 
-	std::cout << "Time to proccess a range of " << _vec.size() << " with std::vector : " << _vecTime << std::endl;
-	std::cout << "Time to proccess a range of " << _deq.size() << " with std::deque  : " << _dequeTime << std::endl;
+	std::cout << "Time to proccess a range of " << _vec.size() << " with std::vector : " << _vecTime / (CLOCKS_PER_SEC / 1000)  << "s" << std::endl;
+	std::cout << "Time to proccess a range of " << _deq.size() << " with std::deque  : " << _dequeTime  / (CLOCKS_PER_SEC / 1000) << "s" << std::endl;
 }
 void	PmergeMe::mergesort_vector(void)
 {
-	size_t i, key, j;
 
-    for (i = 1; i < _vec.size(); i++)
-    {
-        key = _vec[i];
-        j = i - 1;
-        while (j >= 0 && _vec[j] > key)
-        {
-            _vec[j + 1] = _vec[j];
-            j = j - 1;
-        }
-        _vec[j + 1] = key;
-    }
 }
 
 void	PmergeMe::mergesort_deque(void)
 {
-	size_t i, key, j;
 
-    for (i = 1; i < _deq.size(); i++)
-    {
-        key = _deq[i];
-        j = i - 1;
-        while (j >= 0 && _deq[j] > key)
-        {
-            _deq[j + 1] = _deq[j];
-            j = j - 1;
-        }
-        _deq[j + 1] = key;
-    }
 }
 
 bool	PmergeMe::initializeDeque(char **av)
