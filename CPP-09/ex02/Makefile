@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 12:38:05 by ademurge          #+#    #+#              #
-#    Updated: 2023/03/29 12:06:04 by ademurge         ###   ########.fr        #
+#    Updated: 2023/03/29 16:30:04 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ RM			=	rm -rf
 OBJDIR		=	.obj
 
 SRC			=	main.cpp \
-				PmergeMe.cpp
+				PmergeMe.cpp \
+				utils.cpp
 
 OBJ			=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 

@@ -6,17 +6,11 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:11:25 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 12:40:26 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:31:18 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-bool	put_error(std::string err)
-{
-	std::cout << err << std::endl;
-	return (false);
-}
 
 bool	check_args(char **args)
 {
@@ -45,14 +39,20 @@ bool	check_args(char **args)
 
 int main (int ac, char **av)
 {
-	(void) ac;
-	PmergeMe	sort;
-	int			i = 0;
+	try
+	{
+		PmergeMe	test(ac, av);
+	}
+	catch(const PmergeMe::WrongInputException& wie)
+	{
+		std::cerr << wie.what() << std::endl;
+	}
+	// int			i = 0;
 
-	if (!check_args(av))
-		return (EXIT_FAILURE);
-	while (av[++i])
-		sort.addNumber(atoi(av[i]));
-	sort.display(DEQUE);
-	return (0);
+	// if (!check_args(av))
+	// 	return (EXIT_FAILURE);
+	// while (av[++i])
+	// 	sort.addNumber(atoi(av[i]));
+	// sort.display(DEQUE);
+	// return (0);
 }
