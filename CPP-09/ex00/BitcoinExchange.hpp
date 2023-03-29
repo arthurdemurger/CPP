@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:12:56 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/28 11:17:36 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:11:41 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,7 @@
 #include <string>
 #include <ctime>
 #include <iterator>
-
-/*
-** ------------------------------- DEFINE CONSTANTS --------------------------------
-*/
-# define JANUARY 1
-# define FEBRUARY 2
-# define MARCH 3
-# define APRIL 4
-# define MAY 5
-# define JUNE 6
-# define JULY 7
-# define AUGUST 8
-# define SEPTEMBER 9
-# define OCTOBER 10
-# define NOVEMBER 11
-# define DECEMBER 12
-
-/*
-** ------------------------------- UTILS FUNCTIONS --------------------------------
-*/
-bool	check_input(std::string str);
-bool	is_valid_date(int year, int month, int day);
-bool	put_error(std::string error);
+#include "utils.hpp"
 
 /*
 ** ------------------------------- CLASS --------------------------------
