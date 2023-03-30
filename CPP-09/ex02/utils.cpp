@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:25:21 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/30 12:51:58 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:37:49 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,7 @@ void vector_merge_sort(std::vector<int> &vector, size_t start, size_t end)
 	}
 }
 
+/* Displays an error message */
 bool	put_error(std::string err)
 {
 	std::cout << err << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:35:42 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/30 13:33:11 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:37:30 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ std::deque<int> PmergeMe::getDeq(void) const { return (_deq); }
 /*
 ** ------------------------------- METHODS --------------------------------
 */
-
+/* Displays the final output */
 void	PmergeMe::display_all(int ac, char **av)
 {
 	int	i = 0;
@@ -86,6 +86,7 @@ void	PmergeMe::display_all(int ac, char **av)
 	std::cout << "Time to proccess a range of " << _deq.size() << " with std::deque  : " << (_dequeTime / (CLOCKS_PER_SEC)) * 1000 << "ms" << std::endl;
 }
 
+/* Performs merge-insert sorting on the vector container. */
 void	PmergeMe::vector_merge_insert(std::vector<int> &vector, int start, int end)
 {
 	if (end - start > THRESHOLD)
@@ -99,6 +100,7 @@ void	PmergeMe::vector_merge_insert(std::vector<int> &vector, int start, int end)
 		vector_insertion_sort(vector, start, end);
 }
 
+/* Performs merge-insert sorting on the deque container. */
 void	PmergeMe::deque_merge_insert(std::deque<int> &deque, int start, int end)
 {
 	if (end - start > THRESHOLD)
@@ -112,6 +114,7 @@ void	PmergeMe::deque_merge_insert(std::deque<int> &deque, int start, int end)
 		deque_insertion_sort(deque, start, end);
 }
 
+/* Retrieve the numbers from the input and check if they are correct. */
 bool	PmergeMe::initializeDeque(char **av)
 {
 	int	i = 0;
@@ -136,6 +139,7 @@ bool	PmergeMe::initializeDeque(char **av)
 	return (true);
 }
 
+/* Retrieve the numbers from the input and check if they are correct. */
 bool	PmergeMe::initializeVector(char **av)
 {
 	int	i = 0;
