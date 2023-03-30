@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:35:42 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/30 13:06:18 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:15:47 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ void	PmergeMe::display_all(int ac, char **av)
 		std::cout << *(it++) << " ";
 	std::cout << std::endl;
 
-	std::cout << std::fixed << std::setprecision(3);
-	std::cout << "Time to proccess a range of " << _vec.size() << " with std::vector : " << _vecTime / (CLOCKS_PER_SEC * 1000) << "ms" << std::endl;
-	std::cout << "Time to proccess a range of " << _deq.size() << " with std::deque  : " << _dequeTime  / (CLOCKS_PER_SEC * 1000) << "ms" << std::endl;
+	std::cout << std::fixed << std::setprecision(6);
+	std::cout << "Time to proccess a range of " << _vec.size() << " with std::vector : " << (_vecTime / CLOCKS_PER_SEC)  << "s" << std::endl;
+	std::cout << "Time to proccess a range of " << _deq.size() << " with std::deque  : " << (_dequeTime / (CLOCKS_PER_SEC) ) << "s" << std::endl;
 }
 
 void	PmergeMe::vector_merge_insert(std::vector<int> &vector, int start, int end)
