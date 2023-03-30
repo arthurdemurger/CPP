@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:35:42 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/30 10:42:21 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:06:18 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@
 */
 PmergeMe::PmergeMe(int ac, char **av)
 {
+
 	clock_t	vecStart = clock();
 	if (!initializeVector(av))
 		throw WrongInputException();
-	mergesort_vector();
+	vector_merge_insert(_vec, 0, _vec.size() - 1);
 	clock_t	vecEnd = clock();
 
 	clock_t	dequeStart = clock();
 	if (!initializeDeque(av))
 		throw WrongInputException();
-	mergesort_deque();
+	deque_merge_insert(_deq, 0, _deq.size() - 1);
 	clock_t	dequeEnd = clock();
 
 	_vecTime = vecEnd - vecStart;
@@ -57,9 +58,9 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &copy)
 /*
 ** ------------------------------- ACCESSOR --------------------------------
 */
-std::vector<unsigned int> PmergeMe::getVec(void) const { return (_vec); }
+std::vector<int> PmergeMe::getVec(void) const { return (_vec); }
 
-std::deque<unsigned int> PmergeMe::getDeq(void) const { return (_deq); }
+std::deque<int> PmergeMe::getDeq(void) const { return (_deq); }
 
 /*
 ** ------------------------------- METHODS --------------------------------
@@ -75,22 +76,40 @@ void	PmergeMe::display_all(int ac, char **av)
 	std::cout << std::endl;
 
 	std::cout << "After:  ";
-	std::vector<unsigned int>::iterator	it = _vec.begin();
+	std::vector<int>::iterator	it = _vec.begin();
 	while (it != _vec.end())
 		std::cout << *(it++) << " ";
 	std::cout << std::endl;
 
-	std::cout << "Time to proccess a range of " << _vec.size() << " with std::vector : " << _vecTime / (CLOCKS_PER_SEC / 1000)  << "s" << std::endl;
-	std::cout << "Time to proccess a range of " << _deq.size() << " with std::deque  : " << _dequeTime  / (CLOCKS_PER_SEC / 1000) << "s" << std::endl;
-}
-void	PmergeMe::mergesort_vector(void)
-{
-
+	std::cout << std::fixed << std::setprecision(3);
+	std::cout << "Time to proccess a range of " << _vec.size() << " with std::vector : " << _vecTime / (CLOCKS_PER_SEC * 1000) << "ms" << std::endl;
+	std::cout << "Time to proccess a range of " << _deq.size() << " with std::deque  : " << _dequeTime  / (CLOCKS_PER_SEC * 1000) << "ms" << std::endl;
 }
 
-void	PmergeMe::mergesort_deque(void)
+void	PmergeMe::vector_merge_insert(std::vector<int> &vector, int start, int end)
 {
+	if (end - start > THRESHOLD)
+	{
+		int median = (start + end) / 2;
+		vector_merge_insert(vector, start, median);
+		vector_merge_insert(vector, median + 1, end);
+		vector_merge_sort(vector, start, end);
+	}
+	else
+		vector_insertion_sort(vector, start, end);
+}
 
+void	PmergeMe::deque_merge_insert(std::deque<int> &deque, int start, int end)
+{
+	if (end - start > THRESHOLD)
+	{
+		int median = (start + end) / 2;
+		deque_merge_insert(deque, start, median);
+		deque_merge_insert(deque, median + 1, end);
+		deque_merge_sort(deque, start, end);
+	}
+	else
+		deque_insertion_sort(deque, start, end);
 }
 
 bool	PmergeMe::initializeDeque(char **av)

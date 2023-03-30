@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:16:09 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 19:35:03 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:01:55 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <deque>
 #include <iterator>
 #include <time.h>
+#include <iomanip>
 #include "utils.hpp"
 
 /* Class definition */
@@ -33,8 +34,8 @@ class PmergeMe
 		~PmergeMe();
 
 		/* Accessors */
-		std::vector<unsigned int>	getVec(void) const;
-		std::deque<unsigned int>	getDeq(void) const;
+		std::vector<int>	getVec(void) const;
+		std::deque<int>	getDeq(void) const;
 
 		/* Methods*/
 		void						mergesort_deque();
@@ -55,10 +56,12 @@ class PmergeMe
 		bool						initializeDeque(char **av);
 		bool						initializeVector(char **av);
 		void						display_all(int ac, char **av);
+		void						deque_merge_insert(std::deque<int> &vec, int start, int end);
+		void						vector_merge_insert(std::vector<int> &vec, int start, int end);
 
 		/* Attributes */
-		std::vector<unsigned int>	_vec;
-		std::deque<unsigned int>	_deq;
+		std::vector<int>			_vec;
+		std::deque<int>				_deq;
 		double						_vecTime;
 		double						_dequeTime;
 };
