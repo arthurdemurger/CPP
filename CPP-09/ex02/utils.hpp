@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:10:31 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 19:26:38 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/03/30 11:29:36 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@
 */
 # define DEQUE 0
 # define VECTOR 1
+# define THRESHOLD 5
+
+
+
 # define ICI std::cout << "ici\n";
+
 
 /*
 ** ------------------------------- UTILS FUNCTIONS --------------------------------
