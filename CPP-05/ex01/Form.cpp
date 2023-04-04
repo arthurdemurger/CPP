@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:15:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 14:29:38 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 09:42:12 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,12 @@ Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _signG
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(const Form &f) : _name(f._name), _signGrade(f._signGrade), _execGrade(f._execGrade)
-{
-	_isSigned = false;
-}
+Form::Form(const Form &f) : _name(f._name), _isSigned(f._isSigned), _signGrade(f._signGrade), _execGrade(f._execGrade) { }
 
 /*
 ** ------------------------------- DESTRUCTOR --------------------------------
 */
-Form::~Form(void)
-{
-}
+Form::~Form(void) { }
 
 /*
 ** ------------------------------- OVERLOAD --------------------------------
@@ -43,7 +38,7 @@ Form	&Form::operator=(const Form &rhs)
 {
 	if (this != &rhs)
 		this->_isSigned = rhs.getIsSigned();
-		return (*this);
+	return (*this);
 }
 
 std::ostream& operator<<( std::ostream& o, const Form& rhs )
