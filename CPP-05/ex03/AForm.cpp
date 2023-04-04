@@ -24,10 +24,7 @@ AForm::AForm(const std::string name, int signGrade, int execGrade) : _name(name)
 		throw AForm::GradeTooLowException();
 }
 
-AForm::AForm(const AForm &f) : _name(f._name), _signGrade(f._signGrade), _execGrade(f._execGrade)
-{
-	_isSigned = false;
-}
+AForm::AForm(const AForm &f) : _name(f._name), _isSigned(f._isSigned), _signGrade(f._signGrade), _execGrade(f._execGrade) { }
 
 /*
 ** ------------------------------- DESTRUCTOR --------------------------------

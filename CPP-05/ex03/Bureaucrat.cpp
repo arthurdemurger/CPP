@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:44:55 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 12:41:00 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 09:37:01 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs) {
 void	Bureaucrat::incrementGrade(void)
 {
 	if (this->_grade == 1)
-		throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade--;
 }
@@ -70,7 +70,7 @@ void	Bureaucrat::incrementGrade(void)
 void	Bureaucrat::decrementGrade(void)
 {
 	if (this->_grade == 150)
-		throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade++;
 }

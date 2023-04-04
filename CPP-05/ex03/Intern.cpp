@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:13:30 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 14:59:30 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 09:50:48 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ AForm	*Intern::makeForm(std::string form, std::string target)
 		default:
 			throw std::exception();
 	}
-	if (ret)
-		std::cout << "Intern creates " << ret->getName() << std::endl;
+	std::cout << "Intern creates " << ret->getName() << std::endl;
 	return (ret);
 }
