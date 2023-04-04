@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 10:12:36 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/04 10:39:22 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:31:06 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,18 @@ bool	isInff(std::string str)
 	return (str == "inff" || str == "+inff" || str == "-inff" || str == "nanf");
 }
 
-bool	isInt(std::string str)
+bool	isValid(std::string str)
 {
-	int	nb;
+	size_t		pos;
+	std::string	tmp;
 
-	try
+	pos = 0;
+	if (std::isdigit(str[0]))
 	{
-		nb = stoi(str);
+		if (str.find_first_not_of("0123456789.f") != std::string::npos)
+			return (false);
+		if (((pos = str.find("f")) != std::string::npos) && pos != str.size() - 1)
+			return (false);
 	}
-	catch (const std::invalid_argument &ia)
-	{
-		return (false);
-	}
-	catch (const std::out_of_range &oor)
-	{
-		return (false);
-	}
-	if ((str.find(".") != std::string::npos))
-		return (true);
-	return (false);
+	return (true);
 }

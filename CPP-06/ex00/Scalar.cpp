@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 22:06:22 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/04 11:08:56 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:33:30 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Scalar::operator char (void)
 	char	c = 0;
 	int		d = 0;
 
-	if (isInf(_str) || isInff(_str))
+	if (!isValid(_str) || isInf(_str) || isInff(_str))
 	{
 			std::cout << "char:   impossible" << std::endl;
 			return (0);
@@ -60,7 +60,7 @@ Scalar::operator char (void)
 		{
 			c = _str[0];
 		}
-		if (c >= 32 && c <= 126)
+		if (c >= 32 && c <= 127)
 			std::cout << "char:   '" << c << "'" << std::endl;
 		else
 			std::cout << "char:   non displayable" << std::endl;
@@ -106,9 +106,9 @@ Scalar::operator int (void)
 		std::cout << "int:    " << n << std::endl;
 		return (n);
 	}
-	else if (isInf(_str) || isInff(_str))
+	else if (!isValid(_str) || isInf(_str) || isInff(_str))
 	{
-			std::cout << "char:   impossible" << std::endl;
+			std::cout << "int:    impossible" << std::endl;
 			return (0);
 	}
 	try
@@ -133,6 +133,11 @@ Scalar::operator float (void)
 {
 	float	f = 0;
 
+	if (!isValid(_str))
+	{
+		std::cout << "float:  impossible" << std::endl;
+			return (0);
+	}
 	if (_str.length() == 1 && !std::isdigit(_str[0]))
 	{
 		f = static_cast<float>(_str[0]);
@@ -159,6 +164,11 @@ Scalar::operator double (void)
 {
 	double	d = 0;
 
+	if (!isValid(_str))
+	{
+		std::cout << "double: impossible" << std::endl;
+		return (0);
+	}
 	if (_str.length() == 1 && !std::isdigit(_str[0]))
 	{
 		d = static_cast<double>(_str[0]);

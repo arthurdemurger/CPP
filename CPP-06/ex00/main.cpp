@@ -13,6 +13,7 @@
 #include "Scalar.hpp"
 
 
+
 int	main(int ac, char **av)
 {
 	char	c;

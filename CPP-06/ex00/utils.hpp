@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 10:15:50 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/04 10:32:20 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:31:11 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@
 /* utils functions */
 bool	isInff(std::string str);
 bool	isInf(std::string str);
-bool	isInt(std::string str);
+bool	isValid(std::string str);
 
 #endif
