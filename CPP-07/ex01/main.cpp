@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 13:00:35 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/22 18:48:04 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:40:58 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int main (void)
 		std::cout << "[after  incrementation] array of int : ";
 		iter(array, 5, increment);
 		iter(array, 5, display);
+		std::cout << std::endl;
 	}
 	return (0);
 }
