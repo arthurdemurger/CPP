@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 10:24:31 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 14:48:43 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 09:47:47 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,27 @@ try
 		std::cout << "[PresidentialPardonForm]\n";
 		bureaucrat->signForm(*form);
 		std::cout << std::endl;
+
 		std::cout << "[RobotomyRequestForm]\n";
 		bureaucrat->signForm(*form2);
 		std::cout << std::endl;
+
 		std::cout << "[ShrubberyCreationForm]\n";
 		bureaucrat->signForm(*form3);
 		std::cout << std::endl;
+
 
 		std::cout << "******************* Execute Form section *******************" << std::endl;
 		std::cout << "[PresidentialPardonForm]\n";
 		bureaucrat->executeForm(*form);
 		std::cout << std::endl;
+
 		std::cout << "[RobotomyRequestForm]\n";
 		bureaucrat->executeForm(*form2);
 		std::cout << std::endl;
+
 		std::cout << "[ShrubberyCreationForm]\n";
 		bureaucrat->executeForm(*form3);
-		std::cout << std::endl;
 
 		delete bureaucrat;
 		delete form;
@@ -56,6 +60,13 @@ try
 	{
 		std::cerr << "Grade out of range " << '\n';
 	}
-
+	catch(const AForm::GradeTooHighException &gthe)
+	{
+		std::cerr << gthe.what() << std::endl;
+	}
+	catch(const AForm::GradeTooLowException &gtle)
+	{
+		std::cerr << gtle.what() << std::endl;
+	}
 	return EXIT_SUCCESS;
 }
