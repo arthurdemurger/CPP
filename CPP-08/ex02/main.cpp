@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:14:42 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/04 13:12:56 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:57:38 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ int main()
 {
 	srand(time(0));
 	MutantStack<int> mutant;
-
 	for (int i = 0; i < 10; i++)
 		mutant.push(rand() % 100);
 	std::cout << "***** Iteration on the stack *****" << std::endl;
 
 	{
-		MutantStack<int>::iterator begin = mutant.begin();
-		MutantStack<int>::iterator end = mutant.end();std::cout << "[Unsorted stack] : " << std::endl;
+		MutantStack<int>::reverse_iterator begin = mutant.rbegin();
+		MutantStack<int>::reverse_iterator end = mutant.rend();std::cout << "[Unsorted stack] : " << std::endl;
 
 		while (begin != end)
 		{
