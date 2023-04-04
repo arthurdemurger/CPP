@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:25:54 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/22 10:53:16 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:16:54 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	main(void)
 
 	Data		*data2 = deserialize(intptr);
 
-
 	std::cout << "Addresses :" << std::endl;
 	std::cout << "****************************" << std::endl;
 	std::cout << "Data1 address: "<< &data1 << std::endl;
 	std::cout << "Data2 address: "<< data2 << std::endl;
+
 	std::cout << std::endl;
 
 	std::cout << "Values of the data :" << std::endl;
