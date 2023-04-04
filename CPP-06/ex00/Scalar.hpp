@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scalar.hpp                                         :+:      :+:    :+:   */
+/*   Scalar.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:40:39 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 15:15:57 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:41:26 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@
 
 /* Libraries */
 #include <iostream>
+#include <iomanip>
 #include <limits.h>
+#include "utils.hpp"
 
-/* Define constants*/
-# define CHAR 1
-# define INT 2
-# define FLOAT 3
-# define DOUBLE 4
-
+/* Class */
 class Scalar
 {
 	public:
@@ -45,8 +42,6 @@ class Scalar
 	private:
 		Scalar();
 		std::string	_str;
-		bool	isInf(std::string str);
-		bool	isInff(std::string str);
 };
 
 #endif /* SCALAR_HPP */

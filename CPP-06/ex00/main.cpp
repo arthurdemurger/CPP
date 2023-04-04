@@ -26,14 +26,11 @@ int	main(int ac, char **av)
 		return (EXIT_FAILURE);
 	}
 	std::string	src(av[1]);
-	Scalar convert(src);
 
+	Scalar	convert(src);
+	std::cout << std::fixed << std::setprecision(1);
 	c = static_cast<char>(convert);
 	i = static_cast<int>(convert);
 	f = static_cast<float>(convert);
 	d = static_cast<double>(convert);
-	(void) c;
-	(void) i;
-	(void) f;
-	(void) d;
 }
