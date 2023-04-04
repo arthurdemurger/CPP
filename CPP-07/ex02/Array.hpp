@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:00:43 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/23 10:26:14 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:10:19 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ template <typename T>
 class Array
 {
 	public:
-		Array() : _size(0), _array(NULL) { }
+		Array() : _array(NULL), _size(0) { }
 
 		Array(unsigned int n) : _size(n)
 		{
