@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 11:15:34 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/23 15:07:58 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/05 09:27:13 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ typename T::iterator	easyfind(T stack, int nb)
 {
 	typename T::iterator	it;
 
-	it = std::find(stack.begin(), stack.end(), nb);
-	if (it == stack.end())
+	if ((it = std::find(stack.begin(), stack.end(), nb)) == stack.end())
 		throw std::exception();
 	return (it);
 }
