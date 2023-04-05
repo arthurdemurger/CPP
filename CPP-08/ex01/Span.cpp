@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:11:59 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/04 13:05:19 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/05 09:30:57 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,9 @@ Span::~Span(void) { }
 */
 Span	&Span::operator=(const Span &copy)
 {
-	if (this != &copy)
-	{
-		this->_size = copy._size;
-		this->_vector = copy._vector;
-		this->_nbOfInts = copy._nbOfInts;
-	}
+	this->_size = copy._size;
+	this->_vector = copy._vector;
+	this->_nbOfInts = copy._nbOfInts;
 	return (*this);
 }
 
