@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 12:42:48 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/22 13:44:26 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/05 10:47:21 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void swap(T &a, T &b)
 }
 
 template <typename T>
-T &min(const T &a, const T &b)
+T &min(T &a, T &b)
 {
-	return (const_cast<T &> (a < b ? a : b));
+	return (a < b ? a : b);
 }
 
 template <typename T>
-T &max(const T &a, const T &b)
+T &max(T &a, T &b)
 {
-	return (const_cast<T &> (a > b ? a : b));
+	return (a > b ? a : b);
 }
 
 #endif
