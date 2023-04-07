@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:11:58 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/24 10:49:39 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:35:16 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ class Span
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
 
+		/* Exception */
+		class SpanFullException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw() { return "Span is full. No space left."; };
+		};
 	private:
 		Span();
 		std::vector<int>	_vector;

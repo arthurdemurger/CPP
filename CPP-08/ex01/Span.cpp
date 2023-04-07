@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:11:59 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/05 09:30:57 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:36:57 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ unsigned int	Span::getNbOfInts(void) const { return (_nbOfInts); }
 void	Span::addNumber(int nb)
 {
 	if (_nbOfInts == _size)
-		throw std::exception();
+		throw Span::SpanFullException();
 	_vector.push_back(nb);
 	_nbOfInts++;
 }
@@ -74,12 +74,14 @@ void	Span::addNumber(int nb)
 void	Span::addNumber(int nb, int start, int end)
 {
 	if (_nbOfInts == _size || nb + _nbOfInts > _size)
-		throw std::exception();
-	std::srand(time(0));
+		throw Span::SpanFullException();
+	if (start >= end)
+		throw std::invalid_argument("addNumber: error: start point must be smaller than the end.");
 
+	std::srand(time(0));
 	for (int i = 0; i < nb; i++)
 	{
-		int random = start + (rand() % end);
+		int random = start + (rand() % (end + 1));
 		_vector.push_back(random);
 		_nbOfInts++;
 	}

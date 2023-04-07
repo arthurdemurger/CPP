@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:08:46 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/04 12:59:19 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:37:36 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 int main (void)
 {
-	Span	span(500);
+	Span	span(10000);
 
 	try
 	{
-			span.addNumber(500, 0, 10000000);
+			span.addNumber(10000, 0, 1000000);
 			std::cout << span;
 			std::cout << "[Longest span] : " << span.longestSpan() << std::endl;
 			std::cout << "[Shortest span] : " << span.shortestSpan() << std::endl;
 	}
-	catch (const std::exception &e)
+	catch(const std::invalid_argument &ia)
 	{
-		std::cout << "No space left in the span." << std::endl;
+		std::cout << ia.what() << std::endl;
+	}
+	catch (const Span::SpanFullException &spe)
+	{
+		std::cout << spe.what() << std::endl;
 	}
 	catch(const std::out_of_range &oor)
 	{
 		std::cout << oor.what() << std::endl;
 	}
+
 }
