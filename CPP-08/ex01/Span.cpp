@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:11:59 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/07 09:36:57 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:58:26 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	Span::addNumber(int nb, int start, int end)
 	std::srand(time(0));
 	for (int i = 0; i < nb; i++)
 	{
-		int random = start + (rand() % (end + 1));
+		int random = start + (rand() % end);
 		_vector.push_back(random);
 		_nbOfInts++;
 	}
@@ -91,7 +91,7 @@ unsigned int	Span::shortestSpan(void)
 {
 	int	min;
 
-	if (_size <= 1)
+	if (_nbOfInts <= 1)
 		throw std::out_of_range("Minimum two elements in the span.");
 	std::vector<int>	tmp = _vector;
 	std::sort(tmp.begin(), tmp.end());
@@ -104,7 +104,7 @@ unsigned int	Span::shortestSpan(void)
 
 unsigned int	Span::longestSpan(void)
 {
-	if (_size <= 1)
+	if (_nbOfInts <= 1)
 		throw std::out_of_range("Minimum two elements in the span.");
 	int	max = *std::max_element(_vector.begin(), _vector.end());
 	int	min = *std::min_element(_vector.begin(), _vector.end());
