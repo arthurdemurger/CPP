@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:50:43 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 15:12:26 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:03:36 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ bool		check_input(std::string str)
 	if (!is_valid_date(year, month, day))
 		return (put_error("Error: invalid date."));
 	if (value > 1000)
-		return (false);
+		return (put_error("Error: value cannot be bigger than 1000."));
 	return (true);
 }
 
