@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:14:03 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 10:21:15 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:11:56 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ int	RPN::do_operator(int oper)
 
 	if (_stack.size() < 2)
 		return (put_error("Error"));
-	b = ret_pop(&_stack);
-	a = ret_pop(&_stack);
+	b = ft_pop(&_stack);
+	a = ft_pop(&_stack);
 	if (oper == ADD)
 		_stack.push(a + b);
 	else if (oper == SUB)
@@ -117,7 +117,11 @@ bool	RPN::check_arg(std::string arg)
 			&& arg[i] != '*' && arg[i] != '/')
 			return (false);
 		if (std::isdigit(arg[i]))
+		{
+			if (arg[i + 1] && std::isdigit(arg[i + 1]))
+				return (false);
 			nOperand++;
+		}
 		else
 			nOperator++;
 		i++;

@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:10:31 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 15:17:54 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:08:44 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@
 ** ------------------------------- UTILS FUNCTIONS --------------------------------
 */
 int	is_operator(std::string elem);
-int	ret_pop(std::stack<int> *stack);
+int	ft_pop(std::stack<int> *stack);
 
 #endif
