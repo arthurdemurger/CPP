@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 17:50:43 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/07 10:03:36 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:25:32 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ bool		check_input(std::string str)
 		else
 			return (put_error("Error: negative value."));
 	}
+	if (str.find_last_not_of(NUMBERS) != std::string::npos)
+		return (put_error("Error: invalid value."));
 	try
 	{
 		value = stoi(str);

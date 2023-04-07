@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:10:31 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 15:11:29 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:26:03 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 # define OCTOBER 10
 # define NOVEMBER 11
 # define DECEMBER 12
-
+# define NUMBERS "0123456789."
 /*
 ** ------------------------------- UTILS FUNCTIONS --------------------------------
 */

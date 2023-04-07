@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:12:56 by ademurge          #+#    #+#             */
-/*   Updated: 2023/03/29 15:11:41 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:10:16 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class BitcoinExchange
 		std::map<std::string, float>	_input;
 		std::string						_error;
 		/* Private methods */
-		void					parse_data(std::string filename, std::string separator);
+		void						parse_data(std::string filename, std::string separator);
 		bool						parse_input(std::string filename);
 };
 
