@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:13:38 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/07 10:22:08 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:42:27 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ bool	BitcoinExchange::display_value(std::string filename)
 		date = buf.substr(0, pos);
 		value = stof(buf.substr(pos + 3, buf.size() - pos + 3));
 		dataIt = _database.lower_bound(date);
-		std::cout << date << " => " << value << " = " << (dataIt)->second * value << std::endl;
+		if (dataIt == _database.end())
+			std::cout << date << " => " << value << " = " << (--_database.end())->second * value << std::endl;
+		else
+			std::cout << date << " => " << value << " = " << (dataIt)->second * value << std::endl;
 	}
 	file.close();
 	return (true);
