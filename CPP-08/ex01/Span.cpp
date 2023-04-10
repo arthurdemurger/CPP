@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 15:11:59 by ademurge          #+#    #+#             */
-/*   Updated: 2023/04/07 10:58:26 by ademurge         ###   ########.fr       */
+/*   Updated: 2023/04/10 09:35:39 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	Span::addNumber(int nb)
 
 void	Span::addNumber(int nb, int start, int end)
 {
+	if (nb < 0)
+		throw std::invalid_argument("number of value to add must be positive.");
 	if (_nbOfInts == _size || nb + _nbOfInts > _size)
 		throw Span::SpanFullException();
 	if (start >= end)
